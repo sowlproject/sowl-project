@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2732ff58.css",
+    "main.js": "/static/js/main.cbf83377.js",
+    "static/js/787.aabb1089.chunk.js": "/static/js/787.aabb1089.chunk.js",
+    "static/media/Home_camera_icon.png": "/static/media/Home_camera_icon.2c75cefe7b3c88388882.png",
+    "index.html": "/index.html",
+    "main.2732ff58.css.map": "/static/css/main.2732ff58.css.map",
+    "main.cbf83377.js.map": "/static/js/main.cbf83377.js.map",
+    "787.aabb1089.chunk.js.map": "/static/js/787.aabb1089.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2732ff58.css",
+    "static/js/main.cbf83377.js"
+  ]
+}

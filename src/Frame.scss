@@ -1,0 +1,54 @@
+.FrameDiv {
+    background-color: #1A5779;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.title {
+    margin-top: 0vh;
+    padding-top: 10vh;
+    margin-bottom: 2vh;
+    color: white;
+    text-align: center;
+    font-size: 9vh;
+}
+
+.frame_table{
+    display: block;
+    margin: auto;
+    padding-top: 1vh;
+    text-align: center;
+    width: 90vh;
+    height: 72vh;
+}
+
+.frame_name {
+    margin-top: 0vh;
+    padding-top: 0vh;
+    margin-bottom: 0vh;
+    color: white;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.frame_base {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 15vh;
+    color: #ffffff;
+    text-align: center;
+    font-size: 47px;
+    margin-bottom: 0%;
+}
+
+h4 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0%;
+}

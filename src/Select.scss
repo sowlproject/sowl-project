@@ -1,0 +1,58 @@
+.bodyDiv {
+  background-color: #4684B0;
+  background-attachment: fixed;
+  height: 100vh;
+  text-align: center;
+}
+
+.centerContainer {
+  display: block;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.title {
+  display: inline-block;
+  font-size: 9vh;
+  margin: 0;
+  margin-top: 2%;
+  padding: 0;
+}
+
+.captureImg {
+  display: inline-block;
+  width: 190px;
+  // margin: 2% 5%;
+}
+
+.ImageTable {
+  display: inline-block;
+  margin-bottom: 2.5%;
+  border-spacing: 10px;
+}
+
+.frameImgPreview {
+  display: inline-block;
+  width: 210px;
+  margin-right: 3%;
+}
+
+.circle {
+  display: inline-block;
+  position: absolute;
+  margin-left: -140px;
+  margin-top: 20px;
+  background-color: rgba(128, 128, 128, 0.75);
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.circle span {
+  display: inline-block;
+  padding-top: 7px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 45px;
+  font-weight: 1000;
+}
