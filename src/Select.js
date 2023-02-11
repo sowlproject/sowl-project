@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom";
 import "./Select.scss";
 // import "./Frame.scss";
 import Frame_base_1 from "./img/Frame_base_1.png";
