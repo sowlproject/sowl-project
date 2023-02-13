@@ -7,6 +7,11 @@ import Frame from './Frame.js';
 import Camera from './Camera.js';
 import Select from './Select.js';
 
+
+
+let imageSet = []
+let selectedFew = ["X","X","X","X","X","X","X","X"]
+
 export function App() {
   const handle = useFullScreenHandle();
   return (
@@ -18,8 +23,8 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/frame" element={<Frame />} />
-          <Route path="/camera" element={<Camera />} />
-          <Route path='/Select' element={<Select />} />
+          <Route path="/camera" element={<Camera imageSrc={imageSet} selected={selectedFew} />} />
+          <Route path='/Select' element={<Select imageSrc={imageSet}/>} />
         </Routes>
       </BrowserRouter>
       

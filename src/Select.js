@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import "./Select.scss";
-// import "./Frame.scss";
+import "./Frame.scss";
 import Frame_base_1 from "./img/Frame_base_1.png";
-import CaptureImg from "./img/CaptureImg.png";
+// import CaptureImg from "./img/CaptureImg.png";
+import imageSet from "./App";
 
 
 function Frame() {
@@ -27,20 +28,20 @@ function ImgList() {
     <table className="ImageTable">
       <tbody>
         <tr>
-          <td id="select1"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img1"/><SelectNum></SelectNum></td>
-          <td id="select2"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img2"/></td>
+          <td id="select1"><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1"/><SelectNum></SelectNum></td>
+          <td id="select2"><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2"/></td>
         </tr>
         <tr>
-          <td id="select3"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img3"/></td>
-          <td id="select4"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img4"/></td>
+          <td id="select3"><img src={imageSet[2]} alt="exampleImg" className="captureImg" id="img3"/></td>
+          <td id="select4"><img src={imageSet[3]} alt="exampleImg" className="captureImg" id="img4"/></td>
         </tr>
         <tr>
-          <td id="select5"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img5"/></td>
-          <td id="select6"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img6"/></td>
+          <td id="select5"><img src={imageSet[4]} alt="exampleImg" className="captureImg" id="img5"/></td>
+          <td id="select6"><img src={imageSet[5]} alt="exampleImg" className="captureImg" id="img6"/></td>
         </tr>
         <tr>
-          <td id="select7"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img7"/></td>
-          <td id="select8"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img8"/></td>
+          <td id="select7"><img src={imageSet[6]} alt="exampleImg" className="captureImg" id="img7"/></td>
+          <td id="select8"><img src={imageSet[7]} alt="exampleImg" className="captureImg" id="img8"/></td>
         </tr>
       </tbody>
     </table>
