@@ -27,7 +27,7 @@ function ImgList() {
     <table className="ImageTable">
       <tbody>
         <tr>
-          <td id="select1" onClick={select(this.id)}><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img1"/><SelectNum></SelectNum></td>
+          <td id="select1"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img1"/><SelectNum></SelectNum></td>
           <td id="select2"><img src={CaptureImg} alt="exampleImg" className="captureImg" id="img2"/></td>
         </tr>
         <tr>

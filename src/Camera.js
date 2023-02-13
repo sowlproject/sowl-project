@@ -105,7 +105,7 @@ const Camera = () => {
                     </div>
                 </div>
             )}
-            <Link to="/Select">   go to Select</Link>
+            <Link to="/Select">go to Select</Link>
         </div>
     );
 };
