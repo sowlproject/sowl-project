@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./Frame.scss";
 import Home_camera_icon from "./img/Home_camera_icon.png";
 import Frame_base_1 from "./img/Frame_base_1.png";
+import Frame_base_2 from "./img/Frame_base_2.png";
+import Frame_base_3 from "./img/Frame_base_3.png";
+import Frame_base_4 from "./img/Frame_base_4.png";
 
 export default function Frame() {
 
@@ -18,9 +21,9 @@ export default function Frame() {
                     </tr>
                     <tr>
                         <td><Link to="/camera"><img src={Frame_base_1} className="frame_base" alt="camera_icon"></img></Link></td>
-                        <td><Link to="/camera"><img src={Frame_base_1} className="frame_base" alt="camera_icon"></img></Link></td>
-                        <td><Link to="/camera"><img src={Frame_base_1} className="frame_base" alt="camera_icon"></img></Link></td>
-                        <td><Link to="/camera"><img src={Frame_base_1} className="frame_base" alt="camera_icon"></img></Link></td>
+                        <td><Link to="/camera"><img src={Frame_base_2} className="frame_base" alt="camera_icon"></img></Link></td>
+                        <td><Link to="/camera"><img src={Frame_base_3} className="frame_base" alt="camera_icon"></img></Link></td>
+                        <td><Link to="/camera"><img src={Frame_base_4} className="frame_base" alt="camera_icon"></img></Link></td>
                     </tr>
                     <tr>
                         <td>555</td>
