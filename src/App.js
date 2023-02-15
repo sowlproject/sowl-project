@@ -6,7 +6,7 @@ import Home from './Home.js';
 import Frame from './Frame.js';
 import Camera from './Camera.js';
 import Select from './Select.js';
-
+import Radio from './Radiotest.js';
 
 
 let imageSet = []
@@ -23,6 +23,7 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/frame" element={<Frame />} />
+          <Route path="/radio" element={<Radio />} />
           <Route path="/camera" element={<Camera imageSrc={imageSet} selected={selectedFew} />} />
           <Route path='/Select' element={<Select imageSrc={imageSet}/>} />
         </Routes>
