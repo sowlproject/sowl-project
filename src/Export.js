@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./Frame.scss";
 const imgbbUploader = require("imgbb-uploader");
 //API KEY: 46cc197df26dbf3d3caf8c1a71605bd4
+//API URL: https://api.imgbb.com/1/upload
+//API Documentation: https://api.imgbb.com/ , https://www.npmjs.com/package/imgbb-uploader
 
 const options = {
     apiKey: "46cc197df26dbf3d3caf8c1a71605bd4", // MANDATORY

@@ -22,6 +22,7 @@ export default class App extends Component {
 
         return (
             <div className="App">
+                <br></br><br></br><br></br><br></br><br></br>
                 <input id="Black" value="Black" name="platform" type="radio"
                     checked={this.state.selectValue === "Black"}
                     onChange={this.handleChange}/>Black
