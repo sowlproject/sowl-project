@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
-import Home_camera_icon from "./img/Home_camera_icon.png";
 import Frame_base_1 from "./img/Frame_base_1.png";
 import Frame_base_2 from "./img/Frame_base_2.png";
 import Frame_base_3 from "./img/Frame_base_3.png";
