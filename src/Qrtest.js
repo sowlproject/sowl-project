@@ -1,10 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import QRCode from "react-qr-code";
 
 //ReactDOM.render(<QRCode value="hey" />, document.getElementById("Container"));
 
-export default function Qrtest() {
+function Qrtest() {
     return (
         <div style={{ background: 'white', padding: '16px' }}>
             <br></br><br></br><br></br><br></br>
@@ -17,3 +16,4 @@ export default function Qrtest() {
     );
 }
 
+export default Qrtest;

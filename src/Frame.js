@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
+import Radio from './Radiotest.js';
 import Frame_base_1 from "./img/Frame_base_1.png";
 import Frame_base_2 from "./img/Frame_base_2.png";
 import Frame_base_3 from "./img/Frame_base_3.png";
@@ -24,10 +25,7 @@ export default function Frame() {
                     <td><Link to="/camera"><img src={Frame_base_4} className="frame_base" alt="camera_icon"></img></Link></td>
                 </tr>
                 <tr>
-                    <td>555</td>
-                    <td>666</td>
-                    <td>777</td>
-                    <td>888</td>
+                    <Radio></Radio>
                 </tr>
             </table>
             <Link to="/Camera">go to Camera</Link>
