@@ -7,7 +7,6 @@ import Frame from './Frame.js';
 import Camera from './Camera.js';
 import Select from './Select.js';
 import Radio from './Radiotest.js';
-import Qrtest from './Qrtest.js';
 
 let imageSet = [];
 let imageSelected4 = [];
@@ -26,7 +25,6 @@ export function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/frame" element={<Frame />} />
           <Route path="/radio" element={<Radio />} />
-          <Route path="/qr" element={<Qrtest />} />
           <Route path="/camera" element={<Camera imageSrc={imageSet} selected={imageSelected4} />} />
           <Route path='/Select' element={<Select imageSrc={imageSet}/>} />
         </Routes>
