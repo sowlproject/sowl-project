@@ -59,7 +59,6 @@ function selectImgFile(a) {
     <table className="ImageTable">
       <tbody>
         <tr>
-          
           <button id="select1"><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1" /></button>
           <button id="select2"><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2" /></button>
           </tr>
