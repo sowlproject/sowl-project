@@ -2,10 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
 import Radio from './Radiotest.js';
-import Frame_base_1 from "./img/Frame_base_1.png";
-import Frame_base_2 from "./img/Frame_base_2.png";
-import Frame_base_3 from "./img/Frame_base_3.png";
-import Frame_base_4 from "./img/Frame_base_4.png";
+import {selectedFrame} from "./App";
+import Frame0 from "./img/Frame_black_480.png";
+import Frame1 from "./img/Frame_navy_480.png";
+import Frame2 from "./img/Frame_skhu_480.png";
+import Frame3 from "./img/Frame_yellowgreen_480.png";
+
+function setFrame(num) {
+    selectedFrame = num;
+}
 
 export default function Frame() {
     return (
@@ -19,10 +24,10 @@ export default function Frame() {
                     <td>YellowGreen</td>
                 </tr>
                 <tr>
-                    <td><Link to="/camera"><img src={Frame_base_1} className="frame_base" alt="camera_icon"></img></Link></td>
-                    <td><Link to="/camera"><img src={Frame_base_2} className="frame_base" alt="camera_icon"></img></Link></td>
-                    <td><Link to="/camera"><img src={Frame_base_3} className="frame_base" alt="camera_icon"></img></Link></td>
-                    <td><Link to="/camera"><img src={Frame_base_4} className="frame_base" alt="camera_icon"></img></Link></td>
+                    <td onClick={() => setFrame(0)}><img src={Frame0} className="frame_base" alt="camera_icon"></img></td>
+                    <td onClick={() => setFrame(1)}><img src={Frame1} className="frame_base" alt="camera_icon"></img></td>
+                    <td onClick={() => setFrame(2)}><img src={Frame2} className="frame_base" alt="camera_icon"></img></td>
+                    <td onClick={() => setFrame(3)}><img src={Frame3} className="frame_base" alt="camera_icon"></img></td>
                 </tr>
                 <tr>
                     <Radio></Radio>

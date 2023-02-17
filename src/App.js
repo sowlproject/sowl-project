@@ -13,6 +13,7 @@ let imageSelected4 = [];
 
 let selectedFrame = 0;
 
+let frameSrc = new Image();
 
 export function App() {
   const handle = useFullScreenHandle();

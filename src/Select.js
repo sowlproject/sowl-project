@@ -3,18 +3,32 @@ import ReactDOM from 'react-dom/client';
 import "./Select.scss";
 import "./Frame.scss";
 import "./bgFrame.scss";
-import Frame_base_1 from "./img/Frame_base_1.png";
 // import CaptureImg from "./img/CaptureImg.png";
-import {imageSet, imageSelected4, selectedFrame} from "./App";
+import {imageSet, imageSelected4} from "./App";
+import {selectedFrame, frameSrc} from "./App";
+import Frame0 from "./img/Frame_black_480.png";
+import Frame1 from "./img/Frame_navy_480.png";
+import Frame2 from "./img/Frame_skhu_480.png";
+import Frame3 from "./img/Frame_yellowgreen_480.png";
 
 function frameNum() {
-  if (selectedFrame == 1) {
-    return 
+  // let frameImg = document.getElementById('frameDefault');
+  if (selectedFrame == 0) {
+    return Frame0;
+  }
+  else if (selectedFrame == 1) {
+    return Frame1;
+  }
+  else if (selectedFrame == 2) {
+    return Frame2;
+  }
+  else {
+    return Frame3;
   }
 }
 
 function Frame() {
-  return <img src={Frame_base_1} alt="frame" className="frameImgPreview" />
+  return <img src={frameNum} id='frameDefault' alt="frame" className="frameImgPreview" />
 }
 
 function BgFrame() {
