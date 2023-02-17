@@ -4,6 +4,7 @@ import "./Frame.scss";
 const imgbbUploader = require("imgbb-uploader");
 import React from "react";
 import QRCode from "react-qr-code";
+import imageSelected4 from "./App";
 //API KEY: 46cc197df26dbf3d3caf8c1a71605bd4
 //API URL: https://api.imgbb.com/1/upload
 //API Documentation: https://api.imgbb.com/ , https://www.npmjs.com/package/imgbb-uploader

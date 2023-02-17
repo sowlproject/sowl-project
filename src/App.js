@@ -10,7 +10,6 @@ import Radio from './Radiotest.js';
 
 let imageSet = [];
 let imageSelected4 = [];
-let selectedFew = ["X","X","X","X","X","X","X","X"]
 
 
 export function App() {
@@ -25,6 +24,10 @@ export function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/frame" element={<Frame />} />
           <Route path="/radio" element={<Radio />} />
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 990aa65 (임시 최적화)
           <Route path="/camera" element={<Camera imageSrc={imageSet} selected={imageSelected4} />} />
           <Route path='/Select' element={<Select imageSrc={imageSet}/>} />
         </Routes>
