@@ -6,8 +6,17 @@ import "./bgFrame.scss";
 import Frame_base_1 from "./img/Frame_base_1.png";
 // import CaptureImg from "./img/CaptureImg.png";
 import imageSet from "./App";
+<<<<<<< HEAD
 import imageSelected4 from "./App"
 import selectedFrame from "./App"; 
+=======
+import imageSelected4 from "./App";
+import selectedFrame from "./App";
+import Frame0 from "./img/Frame_black_480.png";
+import Frame1 from "./img/Frame_navy_480.png";
+import Frame2 from "./img/Frame_skhu_480.png";
+import Frame3 from "./img/Frame_yellowgreen_480.png";
+>>>>>>> b4abe1ab4af038fa1e3ddd42f992bfc5e31942ac
 
 function frameNum() {
   if (selectedFrame == 1) {
@@ -74,6 +83,7 @@ function select(id, num) {
     <table className="ImageTable">
       <tbody>
         <tr>
+<<<<<<< HEAD
           <td onClick={() => select(this.id, 0)}><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1" /></td>
           <td onClick={() => select(this.id, 1)}><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2" /></td>
         </tr>
@@ -88,6 +98,22 @@ function select(id, num) {
         <tr>
           <td onClick={() => select(this.id, 6)}><img src={imageSet[6]} alt="exampleImg" className="captureImg" id="img7" /></td>
           <td onClick={() => select(this.id, 7)}><img src={imageSet[7]} alt="exampleImg" className="captureImg" id="img8" /></td>
+=======
+          <td><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1" /></td>
+          <td><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2" /></td>
+        </tr>
+        <tr>
+          <td><img src={imageSet[2]} alt="exampleImg" className="captureImg" id="img3" /></td>
+          <td><img src={imageSet[3]} alt="exampleImg" className="captureImg" id="img4" /></td>
+        </tr>
+        <tr>
+          <td><img src={imageSet[4]} alt="exampleImg" className="captureImg" id="img5" /></td>
+          <td><img src={imageSet[5]} alt="exampleImg" className="captureImg" id="img6" /></td>
+        </tr>
+        <tr>
+          <td><img src={imageSet[6]} alt="exampleImg" className="captureImg" id="img7" /></td>
+          <td><img src={imageSet[7]} alt="exampleImg" className="captureImg" id="img8" /></td>
+>>>>>>> b4abe1ab4af038fa1e3ddd42f992bfc5e31942ac
         </tr>
       </tbody>
     </table>
