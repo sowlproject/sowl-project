@@ -82,19 +82,19 @@ function ImgList() {
       <tbody>
         <tr>
           <td><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1" /></td>
-          <button id="select2"><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2" /></button>
+          <td><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2" /></td>
         </tr>
         <tr>
-          <button id="select3"><img src={imageSet[2]} alt="exampleImg" className="captureImg" id="img3" /></button>
-          <button id="select4"><img src={imageSet[3]} alt="exampleImg" className="captureImg" id="img4" /></button>
+          <td><img src={imageSet[2]} alt="exampleImg" className="captureImg" id="img3" /></td>
+          <td><img src={imageSet[3]} alt="exampleImg" className="captureImg" id="img4" /></td>
         </tr>
         <tr>
-          <button id="select5"><img src={imageSet[4]} alt="exampleImg" className="captureImg" id="img5" /></button>
-          <button id="select6"><img src={imageSet[5]} alt="exampleImg" className="captureImg" id="img6" /></button>
+          <td><img src={imageSet[4]} alt="exampleImg" className="captureImg" id="img5" /></td>
+          <td><img src={imageSet[5]} alt="exampleImg" className="captureImg" id="img6" /></td>
         </tr>
         <tr>
-          <button id="select7"><img src={imageSet[6]} alt="exampleImg" className="captureImg" id="img7" /></button>
-          <button id="select8"><img src={imageSet[7]} alt="exampleImg" className="captureImg" id="img8" /></button>
+          <td><img src={imageSet[6]} alt="exampleImg" className="captureImg" id="img7" /></td>
+          <td><img src={imageSet[7]} alt="exampleImg" className="captureImg" id="img8" /></td>
         </tr>
       </tbody>
     </table>
