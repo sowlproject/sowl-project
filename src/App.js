@@ -24,10 +24,6 @@ export function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/frame" element={<Frame />} />
           <Route path="/radio" element={<Radio />} />
-<<<<<<< HEAD
-=======
-        
->>>>>>> 990aa65 (임시 최적화)
           <Route path="/camera" element={<Camera imageSrc={imageSet} selected={imageSelected4} />} />
           <Route path='/Select' element={<Select imageSrc={imageSet}/>} />
         </Routes>
