@@ -10,7 +10,6 @@ import Radio from './Radiotest.js';
 
 let imageSet = [];
 let imageSelected4 = [];
-let selectedFew = ["X","X","X","X","X","X","X","X"]
 
 
 export function App() {
