@@ -7,7 +7,11 @@ import Frame_base_1 from "./img/Frame_base_1.png";
 // import CaptureImg from "./img/CaptureImg.png";
 import {imageSet, imageSelected4, selectedFrame} from "./App";
 
-function 
+function frameNum() {
+  if (selectedFrame == 1) {
+    return 
+  }
+}
 
 function Frame() {
   return <img src={Frame_base_1} alt="frame" className="frameImgPreview" />
