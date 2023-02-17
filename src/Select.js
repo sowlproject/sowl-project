@@ -5,7 +5,7 @@ import "./Select.scss";
 import "./Frame.scss";
 import "./bgFrame.scss";
 import imageSet from "./App";
-import  imageSelected4 from "./App";
+import imageSelected4 from "./App";
 import selectedFrame from "./App";
 import frameSrc from "./App";
 import Frame0 from "./img/Frame_black_480.png";
@@ -81,7 +81,7 @@ function ImgList() {
     <table className="ImageTable">
       <tbody>
         <tr>
-          <button id="select1"><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1" /></button>
+          <td><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1" /></td>
           <button id="select2"><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2" /></button>
         </tr>
         <tr>
