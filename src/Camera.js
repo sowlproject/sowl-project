@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import imageSet from "./App";
 
 const videoConstraints = {
-    width: 540,
+    width: 421,
+    height: 268,
     facingMode: "environment"
 };
 let num = -1;
@@ -15,7 +16,7 @@ const Camera = () => {
     const [url, setUrl] = React.useState(null);
     const capturePhoto_1 = React.useCallback(async () => {
         if (num === 7) return; num++;
-        const imageTmp = webcamRef.current.getScreenshot();
+        const imageTmp = webcamRef.current.getScreenshot({ width: 421, height: 268 });
         imageSet[num] = imageTmp;
         setUrl(imageSet[num]);
         setNumber(prevNumber => prevNumber + 1);
@@ -35,6 +36,7 @@ const Camera = () => {
                 ref={webcamRef}
                 audio={false} // 오디오 설정 false = mute
                 screenshotFormat="image/jpeg" // 저장 확장자 설정 image/jpeg, image/png, image/webp, image/heic
+                forceScreenshotSourceSize={true} // 캡쳐화면 크기 설정 = videoConstraints와 동일하게 설정
                 videoConstraints={videoConstraints}
                 onUserMedia={onUserMedia}
                 screenshotQuality={1} // 캡쳐화질 설정 0 ~ 1
