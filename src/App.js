@@ -11,6 +11,8 @@ import Radio from './Radiotest.js';
 let imageSet = [];
 let imageSelected4 = [];
 
+let selectedFrame = 0;
+
 
 export function App() {
   const handle = useFullScreenHandle();

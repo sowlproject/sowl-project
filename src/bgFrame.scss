@@ -1,19 +1,48 @@
-.selectBgFrame1 {
-  position: fixed;
-  // rotate: 45;
-}
-
+body { overflow: hidden; }
 
 .bgFrame {
   display: inline-block;
-  color: white;
-  width: 232px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 300px;
   height: 874px;
 }
 
 .bgFrameSC {
   display: inline-block;
-  color: #d9d9d9;
+  background-color: rgb(150, 150, 150, 0.4);
+  margin-top: 12px;
   width: 271px;
   height: 205px;
+}
+
+.homeBgFrame1 {
+  position: absolute;
+  transform: rotate(55deg);
+  text-align: center;
+  top: -330px;
+  left: -20px;
+}
+
+.homeBgFrame2 {
+  position: absolute;
+  transform: rotate(55deg);
+  text-align: center;
+  top: 50%;
+  left: 80%;
+}
+
+.selectBgFrame1 {
+  position: absolute;
+  transform: rotate(45deg);
+  text-align: center;
+  top: -40%;
+  left: -10%;
+}
+
+.selectBgFrame2 {
+  position: absolute;
+  transform: rotate(135deg);
+  text-align: center;
+  top: 40%;
+  left: -10%;
 }
