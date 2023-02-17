@@ -4,8 +4,8 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    width: 361px;
-    height: 387px;
+    width: 336px;
+    height: 350px;
     -webkit-user-select: none;
     -webkit-user-drag: none;
 }
@@ -28,13 +28,15 @@
 }
 
 .Title {
-    margin-top: 0vh;
-    padding-top: 12vh;
-    margin-bottom: 7.5vh;
-    color: white;
+    font-size: 113px;
+    font-family: "Noto Sans KR";
     text-align: center;
-    font-size: 14vh;
+    margin-top: 0;
+    padding-top: 90px;
+    margin-bottom: 44px;
+    color: white;
     outline: #4684B0;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     -webkit-user-select: none;
     -webkit-user-drag: none;
 }
@@ -43,25 +45,24 @@
     margin: auto;
     display: block;
     text-align: center;
-    width: 43vh;
-    height: 30vh;
+    width: 330px;
+    height: 230px;
     -webkit-user-select: none;
     -webkit-user-drag: none;
 }
 
 .btn_block {
-    padding-top: 1.2em;
+    padding-top:65px;
     margin: auto;
     display: block;
-    width: 185.59px;
+    width: 201.59px;
 }
 
 .StartButton {
-    /* 생략 */
     margin: 0;
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 1.3rem;
     font-family: "Noto Sans KR";
-    font-size: 1.9rem;
+    font-size: 1.88rem;
     font-weight: bolder;
     text-align: center;
     text-decoration: none;
@@ -93,26 +94,30 @@
 .StartButton>h5 {
     margin: 0px;
     padding-top: 3px;
-    padding-bottom: 3px;
+    padding-bottom: 6px;
     margin-block-end: 0px;
     width: 160px;
 }
 
 .kor_subtext {
-    margin-top: 5vh;
+    font-family: "Noto Sans KR";
+    margin-top: 30px;
     color: #ffffff;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
+    font-weight: 3;
     margin-bottom: 0%;
     -webkit-user-select: none;
     -webkit-user-drag: none;
 }
 
 .eng_subtext {
-    color: white;
+    font-family: "Noto Sans KR";
+    color: #ffffff;
     text-align: center;
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: 3;
     margin-top: 0%;
     -webkit-user-select: none;
-    -webkit-user-drag: none;
+    -webkit-user-drag: none;    
 }
