@@ -9,8 +9,10 @@ import Select from './Select.js';
 import Radio from './Radiotest.js';
 import Qrtest from './Qrtest.js';
 
-let imageSet = []
+let imageSet = [];
+let imageSelected4 = [];
 let selectedFew = ["X","X","X","X","X","X","X","X"]
+
 
 export function App() {
   const handle = useFullScreenHandle();
@@ -25,7 +27,7 @@ export function App() {
           <Route path="/frame" element={<Frame />} />
           <Route path="/radio" element={<Radio />} />
           <Route path="/qr" element={<Qrtest />} />
-          <Route path="/camera" element={<Camera imageSrc={imageSet} selected={selectedFew} />} />
+          <Route path="/camera" element={<Camera imageSrc={imageSet} selected={imageSelected4} />} />
           <Route path='/Select' element={<Select imageSrc={imageSet}/>} />
         </Routes>
       </BrowserRouter>
