@@ -73,6 +73,7 @@ const Camera = () => {
                 //     </div>
                 // </div>
                 <div id="check_photosel">
+                    <Link to="/Select">go to Select</Link>
                     <div className="check_sel" id="check_sel1">
                         <p className="check_num" id="check_num1">
                             <img src={imageSet[0]} className="check_cnv" id="check_cnv1" width="240px" height="135px" alt="Screenshot" /></p>
@@ -107,7 +108,6 @@ const Camera = () => {
                     </div>
                 </div>
             )}
-            <Link to="/Select">go to Select</Link>
         </div>
     );
 };
