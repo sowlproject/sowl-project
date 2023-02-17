@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
 import Radio from './Radiotest.js';
-import {selectedFrame} from "./App";
+import selectedFrame from "./App";
 import Frame0 from "./img/Frame_black_480.png";
 import Frame1 from "./img/Frame_navy_480.png";
 import Frame2 from "./img/Frame_skhu_480.png";
