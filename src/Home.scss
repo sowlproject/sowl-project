@@ -4,7 +4,21 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    // width: 30px;
+    width: 361px;
+    height: 387px;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.Home_frame60 {
+    position: fixed;
+    z-index: 1;
+    width: 450px;
+    height: 270px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .HomeDiv {
@@ -21,6 +35,8 @@
     text-align: center;
     font-size: 14vh;
     outline: #4684B0;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .Home_camera_icon {
@@ -29,6 +45,8 @@
     text-align: center;
     width: 43vh;
     height: 30vh;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .btn_block {
@@ -55,6 +73,8 @@
     border-radius: 7px;
     cursor: pointer;
     transition: 0.5s;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .StartButton:active,
@@ -65,11 +85,12 @@
     background-color: #4684B0;
     color: #ffffff;
 }
+
 .StartButton:disabled {
     opacity: 0.5;
 }
 
-.StartButton > h5 {
+.StartButton>h5 {
     margin: 0px;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -77,31 +98,14 @@
     width: 160px;
 }
 
-// .StartButton {
-//     margin: auto;
-//     display: block;
-//     background-color: #ffffff;
-//     text-decoration: none;
-//     margin-top: 3vh;
-//     color : black;
-//     width: 18vh;
-//     border-radius: 12px;
-// }
-
-// .StartButton > h5 {
-//     margin: 7px;
-//     display: block;
-//     color: #4684B0;
-//     font-weight: bold;
-// }
-
-
 .kor_subtext {
     margin-top: 5vh;
     color: #ffffff;
     text-align: center;
     font-size: 40px;
     margin-bottom: 0%;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .eng_subtext {
@@ -109,4 +113,6 @@
     text-align: center;
     font-size: 30px;
     margin-top: 0%;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }

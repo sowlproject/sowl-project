@@ -14,6 +14,7 @@ export default function Home() {
                 <h3 className="kor_subtext">촬영 시작 버튼을 눌러 소울네컷 촬영을 시작합니다.</h3>
                 <h4 className="eng_subtext">Press the start button to shooting the s.owl 4 cut.</h4>
                 <img src={Home_frame40} className="Home_frame40" alt="Home_frame"></img>
+                <img src={Home_frame60} className="Home_frame60" alt="Home_frame"></img>
             </div>
     );
 }
