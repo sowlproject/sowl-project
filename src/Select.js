@@ -7,7 +7,6 @@ import "./bgFrame.scss";
 import imageSet from "./App";
 import imageSelected4 from "./App";
 import selectedFrame from "./App";
-import frameSrc from "./App";
 import Frame0 from "./img/Frame_black_480.png";
 import Frame1 from "./img/Frame_navy_480.png";
 import Frame2 from "./img/Frame_skhu_480.png";
