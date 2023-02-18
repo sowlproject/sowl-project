@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
-import "./bgFrame.scss";
 import Radio from './Radiotest.js';
 import NextButton from './nextButton.js';
-import selectedFrame from "./App";
-import Frame0 from "./App";
-import Frame1 from "./App";
-import Frame2 from "./App";
-import Frame3 from  "./App";
-import checker from "./App";
-function setFrame(num) {
-    selectedFrame = num;
-}
+//import {setFValue} from "./App";
+import Frame0 from "./img/Frame_black_480.png";
+import Frame1 from "./img/Frame_navy_480.png";
+import Frame2 from "./img/Frame_skhu_480.png";
+import Frame3 from "./img/Frame_yellowgreen_480.png";
+import AppContext from './AppContext';
 
-export default function Frame() {
+export default function Frame(props) {
+    
+
+    const myContext = useContext(AppContext);
+    
     return (
         <div className="FrameDiv">
             <h1 className="title">프레임을 선택하세요.</h1>
@@ -26,32 +26,15 @@ export default function Frame() {
                     <td>YellowGreen</td>
                 </tr>
                 <tr>
-                    <td onClick={() => {setFrame(0); checker = "Black";}}><img src={Frame0} className="frame_base" alt="camera_icon"></img></td>
-                    <td onClick={() => {setFrame(1); checker = "Navy";}}><img src={Frame1} className="frame_base" alt="camera_icon"></img></td>
-                    <td onClick={() => {setFrame(2); checker = "SKHU";}}><img src={Frame2} className="frame_base" alt="camera_icon"></img></td>
-                    <td onClick={() => {setFrame(3); checker = "YellowGreen";}}><img src={Frame3} className="frame_base" alt="camera_icon"></img></td>
+                    <td onClick={() => myContext.setFrame(0)}><img src={Frame0} className="frame_base" alt="camera_icon"></img></td>
+                    <td onClick={() => myContext.setFrame(1)}><img src={Frame1} className="frame_base" alt="camera_icon"></img></td>
+                    <td onClick={() => myContext.setFrame(2)}><img src={Frame2} className="frame_base" alt="camera_icon"></img></td>
+                    <td onClick={() => myContext.setFrame(3)}><img src={Frame3} className="frame_base" alt="camera_icon"></img></td>
                 </tr>
             </table>
             <Radio></Radio>
             <Link to="/Camera"><NextButton></NextButton></Link>
             <br></br>
-            <div className='frameBgFrame1'>
-                <BgFrame></BgFrame>
-            </div>
-            <div className='frameBgFrame2'>
-                <BgFrame></BgFrame>
-            </div>
         </div>
     );
 }
-
-
-function BgFrame() {
-    return (
-        <div className='bgFrame'>
-          <div className='bgFrameSC'></div>
-          <div className='bgFrameSC'></div>
-          <div className='bgFrameSC'></div>
-        </div>
-    )
-  }
