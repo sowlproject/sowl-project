@@ -4,21 +4,21 @@ import "./Select.scss";
 import "./Frame.scss";
 import "./bgFrame.scss";
 import imageSet from "./App";
-import imageSelected4 from "./App"
-import selectedFrame from "./App"; 
+import imageSelected4 from "./App";
+import selectedFrame from "./Frame"; // 고친부분("./App" --> "./Frame")
 import Frame0 from "./img/Frame_black_480.png";
 import Frame1 from "./img/Frame_navy_480.png";
 import Frame2 from "./img/Frame_skhu_480.png";
 import Frame3 from "./img/Frame_yellowgreen_480.png";
 
 function frameNum() {
-  if (selectedFrame == 0) {
+  if (selectedFrame === 0) {
     return Frame0;
   }
-  else if (selectedFrame == 1) {
+  else if (selectedFrame === 1) {
     return Frame1;
   }
-  else if (selectedFrame == 2) {
+  else if (selectedFrame === 2) {
     return Frame2;
   }
   else {
@@ -48,34 +48,36 @@ function SelectNum(data) {
 }
 
 function ImgList() {
-// 기존 8개의 사진이 들어있는 배열에서 선택한 사진을 또다른 배열에 다시 담는 함수
-function selectImgFile(a) {
-  if (a === 0) {
-    imageSelected4.push(imageSet[0]);
-  }
-  else if (a === 1) {
-    imageSelected4.push(imageSet[1]);
-  }
-  else if (a === 2) {
-    imageSelected4.push(imageSet[2]);
-  }
-  else if(a === 3) {
-    imageSelected4.push(imageSet[3]);
-  }
-  else if(a === 4) {
-    imageSelected4.push(imageSet[4]);
-  }
-  else if(a === 5) {
-    imageSelected4.push(imageSet[5]);
-  }
-  else if(a === 6) {
-    imageSelected4.push(imageSet[6]);
-  }
-  else if(a === 7) {
-    imageSelected4.push(imageSet[7]);
-  }
 
-}
+
+// // 기존 8개의 사진이 들어있는 배열에서 선택한 사진을 또다른 배열에 다시 담는 함수
+// function selectImgFile(a) {
+//   if (a === 0) {
+//     imageSelected4.push(imageSet[0]);
+//   }
+//   else if (a === 1) {
+//     imageSelected4.push(imageSet[1]);
+//   }
+//   else if (a === 2) {
+//     imageSelected4.push(imageSet[2]);
+//   }
+//   else if(a === 3) {
+//     imageSelected4.push(imageSet[3]);
+//   }
+//   else if(a === 4) {
+//     imageSelected4.push(imageSet[4]);
+//   }
+//   else if(a === 5) {
+//     imageSelected4.push(imageSet[5]);
+//   }
+//   else if(a === 6) {
+//     imageSelected4.push(imageSet[6]);
+//   }
+//   else if(a === 7) {
+//     imageSelected4.push(imageSet[7]);
+//   }
+
+// }
 function select(id, num) {
   const rootElement = document.getElementById(id);
   const elemet = React.createElement("SelectNum");

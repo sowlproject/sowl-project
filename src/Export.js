@@ -5,7 +5,25 @@ import imageSelected4 from "./App";
 //API KEY: 46cc197df26dbf3d3caf8c1a71605bd4
 //API URL: https://api.imgbb.com/1/upload
 //API Documentation: https://api.imgbb.com/ , https://www.npmjs.com/package/imgbb-uploader
+function imgToBase64ByFileReader(url) {
+    return new Promise((resolve, reject) => {
+      let xhr = new XMLHttpRequest();
+      xhr.onload = () => {
+        let reader = new FileReader();
+        reader.onloadend = function () {
+          resolve(reader.result);
+          console.log(reader.result);
+          document.getElementById('logo').setAttribute('src', reader.result);
+        }
+        reader.readAsDataURL(xhr.response);
+      }
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    });
+  }
 
+var resultprops = imgToBase64ByFileReader('./img/Frame_base_1.png');
 const options = {
     apiKey: "46cc197df26dbf3d3caf8c1a71605bd4",
     expiration: 15552000,

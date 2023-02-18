@@ -9,7 +9,10 @@ import Select from './Select.js';
 import Radio from './Radiotest.js';
 import ReactAudioPlayer from "react-audio-player";
 import bgmusic from "./bgm/여름밤의꿈1.mp3";
-
+import Frame0 from "./img/Frame_black_480.png";
+import Frame1 from "./img/Frame_navy_480.png";
+import Frame2 from "./img/Frame_skhu_480.png";
+import Frame3 from "./img/Frame_yellowgreen_480.png";
 let imageSet = [];
 let imageSelected4 = [];
 
