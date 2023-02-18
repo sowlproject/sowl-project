@@ -1,4 +1,4 @@
-import {React, useContext} from 'react';
+import {React, useContext, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import "./Select.scss";
 import "./Frame.scss";
@@ -79,6 +79,82 @@ function select(id, num) {
   )
 }
 
+function ImgTable() {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+  const handleImageClick = (index) => () => {
+    setSelectedImageIndex(index);
+  }
+
+  const renderNumber = () => {
+    if (selectedImageIndex === null || selectedImageIndex > 3) {
+      return null;
+    }
+
+    return (
+      <div style={{ position: 'absolute', top: 0, left: 0, background: 'white' }}>
+        <p>{selectedImageIndex + 1}</p>
+      </div>
+    );
+  }
+
+  const handleSaveClick = () => {
+    if (selectedImageIndex !== null) {
+      console.log(`이미지 ${selectedImageIndex + 1}이 저장되었습니다.`);
+    }
+  }
+
+  return (
+    <table className="ImageTable">
+      <tbody>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[0]} onClick={handleImageClick(0)} className="captureImg" />
+            {renderNumber()}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[1]} onClick={handleImageClick(1)} className="captureImg" />
+            {renderNumber()}
+          </td>
+        </tr>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[2]} onClick={handleImageClick(2)} className="captureImg" />
+            {renderNumber()}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[3]} onClick={handleImageClick(3)} className="captureImg" />
+            {renderNumber()}
+          </td>
+        </tr>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[4]} onClick={handleImageClick(4)} className="captureImg" />
+            {renderNumber()}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[5]} onClick={handleImageClick(5)} className="captureImg" />
+            {renderNumber()}
+          </td>
+        </tr>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[6]} onClick={handleImageClick(6)} className="captureImg" />
+            {renderNumber()}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[7]} onClick={handleImageClick(7)} className="captureImg" />
+            {renderNumber()}
+          </td>
+        </tr>
+      </tbody>
+      <div>
+        <button onClick={handleSaveClick}>저장</button>
+      </div>
+    </table>
+  );
+}
+
 function Select() {
   const myContext = useContext(AppContext);
 
@@ -94,7 +170,8 @@ function Select() {
       <h2 className='tiltle2'></h2>
       <div className="centerContainer">
         <Frame></Frame>
-        <ImgList></ImgList>
+        <ImgTable></ImgTable>
+        {/* <ImgList></ImgList> */}
       </div>
     </div>
   )

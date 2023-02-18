@@ -12,7 +12,7 @@ body { overflow: hidden; }
 .centerContainer {
   display: block;
   text-align: center;
-  padding-top: 2%;
+  // padding-top: 2%;
 }
 
 .title {
@@ -34,6 +34,7 @@ body { overflow: hidden; }
   display: inline-block;
   // margin-bottom: 2.5%;
   border-spacing: 10px;
+  margin-top: -5%
 }
 
 .ImageTable tbody tr td:hover {
