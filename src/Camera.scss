@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 .CameraDiv {
     background-color: #B7D3E9;
     height: 100vh;
@@ -14,6 +16,10 @@
 }
 
 .counter {
+    font-family: "Noto Sans KR";
+    user-select: none;
+    -webkit-user-drag: none; 
+
     position:fixed;
     margin-top: -68vh;
     margin-left: 8vh;
@@ -22,6 +28,11 @@
 }
 
 .shutter {
+    font-family: "Noto Sans KR";
+    user-select: none;
+    -webkit-user-drag: none; 
+    cursor: pointer;
+
     display: block;
     margin: auto;
     background-color: green;

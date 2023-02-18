@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 .bodyDiv {
   background-color:#B7D3E9;
   background-attachment: fixed;
@@ -14,6 +16,7 @@ body { overflow: hidden; }
 }
 
 .title {
+  font-family: "Noto Sans KR";
   display: inline-block;
   font-size: 9vh;
   margin: 0;

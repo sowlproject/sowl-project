@@ -1,4 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 .fullscbutton {
+  font-family: "Noto Sans KR";
+  user-select: none;
+  -webkit-user-drag: none; 
+
   background-color: #839ced10; /* Green */
   border: none;
   color: white;

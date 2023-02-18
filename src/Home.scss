@@ -6,7 +6,7 @@
     top: 0;
     width: 336px;
     height: 350px;
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -17,7 +17,7 @@
     height: 270px;
     bottom: 0px;
     right: 0px;
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -37,7 +37,7 @@
     color: white;
     outline: #4684B0;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -47,7 +47,7 @@
     text-align: center;
     width: 330px;
     height: 230px;
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -74,7 +74,7 @@
     border-radius: 7px;
     cursor: pointer;
     transition: 0.5s;
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -105,10 +105,25 @@
     color: #ffffff;
     text-align: center;
     font-size: 35px;
-    font-weight: 3;
+    font-weight: 800;
     margin-bottom: 0%;
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none;
+
+    background: linear-gradient(90deg,#9443ff,#004c7c 15%,#575df0 35%,#ab6bff 50%,#076fb0 65%,#575df0 85%,#ab6bff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 3.5s linear infinite;
+    background-size: 200% 100%;
+}
+
+@keyframes gradient {
+    0% {
+    background-position: 0;
+    }
+    100% {
+    background-position: 100%;
+    }
 }
 
 .eng_subtext {
@@ -116,11 +131,16 @@
     color: #ffffff;
     text-align: center;
     font-size: 28px;
-    font-weight: 3;
+    font-weight: 100;
     margin-top: 0%;
     margin-bottom: 0%;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;    
+    user-select: none;
+    -webkit-user-drag: none;
+    background: linear-gradient(90deg,#9443ff,#004c7c 15%,#575df0 35%,#ab6bff 50%,#076fb0 65%,#575df0 85%,#ab6bff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 3.5s linear infinite;
+    background-size: 200% 100%;    
 }
 
 .credit_text {
@@ -128,9 +148,9 @@
     color: #073c64;
     text-align: center;
     font-size: 11.6px;
-    font-weight: 700;
+    font-weight: 900;
     margin-top: 17px;
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none; 
     // rotate: -35deg;
     // position: fixed;

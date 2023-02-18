@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 .FrameDiv {
     background-color: #B7D3E9;
     height: 100vh;
@@ -5,12 +7,16 @@
 }
 
 .title {
+    font-family: "Noto Sans KR";
     margin-top: 0vh;
     padding-top: 10vh;
     margin-bottom: 2vh;
     color: white;
     text-align: center;
     font-size: 9vh;
+
+    user-select: none;
+    -webkit-user-drag: none; 
 }
 
 .frame_table{
@@ -23,6 +29,7 @@
 }
 
 .frame_name {
+    font-family: "Noto Sans KR";
     margin-top: 0vh;
     padding-top: 0vh;
     margin-bottom: 0vh;
@@ -40,6 +47,10 @@
 }
 
 h3 {
+    font-family: "Noto Sans KR";
+    user-select: none;
+    -webkit-user-drag: none; 
+
     margin-top: 15vh;
     color: #ffffff;
     text-align: center;
@@ -48,6 +59,10 @@ h3 {
 }
 
 h4 {
+    font-family: "Noto Sans KR";
+    user-select: none;
+    -webkit-user-drag: none; 
+    
     color: white;
     text-align: center;
     font-size: 30px;
