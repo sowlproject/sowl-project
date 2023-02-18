@@ -8,15 +8,24 @@ import imageSet from "./App";
 import NextButton from './nextButton.js';
 import { Link } from "react-router-dom";
 import imageSelected4 from "./App";
+<<<<<<< Updated upstream
 import selectedFrame from "./Frame"; // 고친부분("./App" --> "./Frame")
 import Frame0 from  "./Frame";
 import Frame1 from "./Frame";
 import Frame2 from "./Frame";
 import Frame3 from "./Frame";
 import checker from "./Frame";
+=======
+import App from "./Radiotest";
+import Frame0 from "./img/Frame_black_480.png";
+import Frame1 from "./img/Frame_navy_480.png";
+import Frame2 from "./img/Frame_skhu_480.png";
+import Frame3 from "./img/Frame_yellowgreen_480.png";
+>>>>>>> Stashed changes
 
 
 function frameNum() {
+<<<<<<< Updated upstream
   if (checker == "Black") {
     console.log(checker);
     return Frame0;
@@ -27,6 +36,16 @@ function frameNum() {
   }
   else if (checker == "SKHU") {
     console.log(checker);
+=======
+  App = new App();
+  if (App.state.selectValue === "Black") {
+    return Frame0;
+  }
+  else if (App.state.selectValue === "Navy") {
+    return Frame1;
+  }
+  else if (App.state.selectValue === "SKHU") {
+>>>>>>> Stashed changes
     return Frame2;
   }
   else if(checker == "YellowGreen") {
