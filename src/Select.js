@@ -4,6 +4,8 @@ import "./Select.scss";
 import "./Frame.scss";
 import "./bgFrame.scss";
 import imageSet from "./App";
+import NextButton from './nextButton.js';
+import { Link } from "react-router-dom";
 import imageSelected4 from "./App";
 import selectedFrame from "./Frame"; // 고친부분("./App" --> "./Frame")
 import Frame0 from "./img/Frame_black_480.png";
@@ -121,6 +123,7 @@ function Select() {
         <Frame></Frame>
         <ImgList></ImgList>
       </div>
+      <Link to="/Export"><NextButton></NextButton></Link>
     </div>
   )
 }

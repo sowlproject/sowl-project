@@ -4,7 +4,7 @@ import './App.scss';
 function NextButton() {
   return (
     <button className="nextButton">
-      다음 &lt;
+      다음 &gt;
     </button>
   )
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
+import "./bgFrame.scss";
 import Radio from './Radiotest.js';
 import NextButton from './nextButton.js';
 import selectedFrame from "./App";
@@ -34,6 +35,23 @@ export default function Frame() {
             <Radio></Radio>
             <Link to="/Camera"><NextButton></NextButton></Link>
             <br></br>
+            <div className='frameBgFrame1'>
+                <BgFrame></BgFrame>
+            </div>
+            <div className='frameBgFrame2'>
+                <BgFrame></BgFrame>
+            </div>
         </div>
     );
 }
+
+
+function BgFrame() {
+    return (
+        <div className='bgFrame'>
+          <div className='bgFrameSC'></div>
+          <div className='bgFrameSC'></div>
+          <div className='bgFrameSC'></div>
+        </div>
+    )
+  }

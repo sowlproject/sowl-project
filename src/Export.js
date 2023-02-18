@@ -2,6 +2,7 @@ import React from "react";
 //const imgbbUploader = require("imgbb-uploader");
 import QRCode from "react-qr-code";
 import imageSelected4 from "./App";
+import ExportButton from './ExportButton.js';
 //API KEY: 46cc197df26dbf3d3caf8c1a71605bd4
 //API URL: https://api.imgbb.com/1/upload
 //API Documentation: https://api.imgbb.com/ , https://www.npmjs.com/package/imgbb-uploader
@@ -49,8 +50,28 @@ imgbbUploader(options)
 function Export() {
     return (
         <div className="FrameDiv">
+
+          <ExportButton></ExportButton>
+
+
+          <div className='ExportBgFrame1'>
+              <BgFrame></BgFrame>
+          </div>
+          <div className='ExportBgFrame2'>
+              <BgFrame></BgFrame>
+          </div>
         </div>
     );
+}
+
+function BgFrame() {
+  return (
+      <div className='bgFrame'>
+        <div className='bgFrameSC'></div>
+        <div className='bgFrameSC'></div>
+        <div className='bgFrameSC'></div>
+      </div>
+  )
 }
 
 export default Export;

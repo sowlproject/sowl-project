@@ -46,3 +46,45 @@
   top: 40%;
   left: -10%;
 }
+
+.frameBgFrame1 {
+  position: absolute;
+  text-align: center;
+  top: 59%;
+  left: 2%;
+}
+
+.frameBgFrame2 {
+  position: absolute;
+  text-align: center;
+  top: -40%;
+  right: 2%;
+}
+
+.cameraBgFrame1 {
+  position: absolute;
+  text-align: center;
+  transform: rotate(45deg);
+
+  top: 50%;
+  left: -10%;
+}
+
+.cameraBgFrame2 {
+  position: absolute;
+  text-align: center;
+  transform: rotate(45deg);
+
+  top: -47%;
+  right: -7%;
+}
+
+.ExportBgFrame1 {
+  position: absolute;
+  text-align: center;
+}
+
+.ExportBgFrame2 {
+  position: absolute;
+  text-align: center;
+}

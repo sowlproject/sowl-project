@@ -108,8 +108,24 @@ const Camera = () => {
                     </div>
                 </div>
             )}
+            <div className='cameraBgFrame1'>
+                <BgFrame></BgFrame>
+            </div>
+            <div className='cameraBgFrame2'>
+                <BgFrame></BgFrame>
+            </div>
         </div>
     );
 };
+
+function BgFrame() {
+    return (
+        <div className='bgFrame'>
+          <div className='bgFrameSC'></div>
+          <div className='bgFrameSC'></div>
+          <div className='bgFrameSC'></div>
+        </div>
+    )
+  }
 
 export default Camera;
