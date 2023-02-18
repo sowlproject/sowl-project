@@ -15,7 +15,7 @@ const Camera = () => {
     const webcamRef = useRef(null);
     const [url, setUrl] = React.useState(null);
     const capturePhoto_1 = React.useCallback(async () => {
-        if (num === 7) return; num++;
+        if (num === 7) {alert("8장 모두 촬영되었습니다. go to select 버튼을 눌러주세요!");return;} num++;
         const imageTmp = webcamRef.current.getScreenshot({ width: 421, height: 268 });
         imageSet[num] = imageTmp;
         setUrl(imageSet[num]);
