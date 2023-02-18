@@ -80,78 +80,91 @@ function select(id, num) {
 }
 
 function ImgTable() {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-
-  const handleImageClick = (index) => () => {
-    setSelectedImageIndex(index);
-  }
-
-  const renderNumber = () => {
-    if (selectedImageIndex === null || selectedImageIndex > 3) {
-      return null;
+  const [selectedImages, setSelectedImages] = useState([]);
+  const [imageNumbers, setImageNumbers] = useState({});
+  
+  const handleImageClick = (event) => {
+    const tdElement = event.target.closest("td");
+    const tdIndex = Array.from(tdElement.parentNode.children).indexOf(tdElement) + 1;
+    
+    if (selectedImages.length < 4 && !imageNumbers[tdIndex]) {
+      const newSelectedImages = [...selectedImages];
+      newSelectedImages.push(event.target.src);
+      setSelectedImages(newSelectedImages);
+      
+      const newImageNumbers = {...imageNumbers};
+      newImageNumbers[tdIndex] = selectedImages.length + 1;
+      setImageNumbers(newImageNumbers);
     }
-
+  };
+  
+  const handleDeleteClick = (index) => {
+    const newSelectedImages = [...selectedImages];
+    newSelectedImages.splice(index, 1);
+    setSelectedImages(newSelectedImages);
+    
+    const newImageNumbers = {...imageNumbers};
+    for (let key in newImageNumbers) {
+      if (newImageNumbers[key] > index) {
+        newImageNumbers[key] -= 1;
+      }
+      if (newImageNumbers[key] === index + 1) {
+        delete newImageNumbers[key];
+      }
+    }
+    setImageNumbers(newImageNumbers);
+  };
+  
+  const renderNumber = (tdIndex) => {
+    if (imageNumbers[tdIndex]) {
+      return (
+        <div style={{ position: "absolute", top: 0, left: 0 }}>
+          {imageNumbers[tdIndex]}
+          <button onClick={() => handleDeleteClick(imageNumbers[tdIndex] - 1)}>
+            X
+          </button>
+        </div>
+      );
+    }
+    return null;
+  };
+  
+  const renderTable = () => {
+    const table = [];
+    for (let i = 0; i < 2; i++) {
+      const children = [];
+      for (let j = 0; j < 4; j++) {
+        const tdIndex = i * 4 + j + 1;
+        children.push(
+          <td key={tdIndex} onClick={handleImageClick}>
+            <img src={`image${tdIndex}.jpg`} alt={`Image ${tdIndex}`} />
+            {renderNumber(tdIndex)}
+          </td>
+        );
+      }
+      table.push(<tr key={i}>{children}</tr>);
+    }
+    return <table><tbody>{table}</tbody></table>;
+  };
+  
+  const renderSelectedImages = () => {
     return (
-      <div style={{ position: 'absolute', top: 0, left: 0, background: 'white' }}>
-        <p>{selectedImageIndex + 1}</p>
+      <div>
+        <p>Selected Images:</p>
+        {selectedImages.map((image, index) => (
+          <div key={index}>
+            <img src={image} alt={`Selected Image ${index + 1}`} />
+          </div>
+        ))}
       </div>
     );
-  }
-
-  const handleSaveClick = () => {
-    if (selectedImageIndex !== null) {
-      console.log(`이미지 ${selectedImageIndex + 1}이 저장되었습니다.`);
-    }
-  }
-
+  };
+  
   return (
-    <table className="ImageTable">
-      <tbody>
-        <tr>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[0]} onClick={handleImageClick(0)} className="captureImg" />
-            {renderNumber()}
-          </td>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[1]} onClick={handleImageClick(1)} className="captureImg" />
-            {renderNumber()}
-          </td>
-        </tr>
-        <tr>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[2]} onClick={handleImageClick(2)} className="captureImg" />
-            {renderNumber()}
-          </td>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[3]} onClick={handleImageClick(3)} className="captureImg" />
-            {renderNumber()}
-          </td>
-        </tr>
-        <tr>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[4]} onClick={handleImageClick(4)} className="captureImg" />
-            {renderNumber()}
-          </td>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[5]} onClick={handleImageClick(5)} className="captureImg" />
-            {renderNumber()}
-          </td>
-        </tr>
-        <tr>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[6]} onClick={handleImageClick(6)} className="captureImg" />
-            {renderNumber()}
-          </td>
-          <td style={{ position: 'relative' }}>
-            <img src={imageSet[7]} onClick={handleImageClick(7)} className="captureImg" />
-            {renderNumber()}
-          </td>
-        </tr>
-      </tbody>
-      <div>
-        <button onClick={handleSaveClick}>저장</button>
-      </div>
-    </table>
+    <div>
+      {renderTable()}
+      {renderSelectedImages()}
+    </div>
   );
 }
 
