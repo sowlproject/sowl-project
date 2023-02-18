@@ -12,6 +12,7 @@ import Frame2 from "./img/Frame_skhu_480.png";
 import Frame3 from "./img/Frame_yellowgreen_480.png";
 import AppContext from './AppContext';
 
+
 function frameNum(selectedFrame) {
   if (selectedFrame === 0) {
     return Frame0;
@@ -27,10 +28,6 @@ function frameNum(selectedFrame) {
   }
 }
 
-function Frame() {
-  const myContext = useContext(AppContext);
-  return <img src={frameNum(myContext.FValue)} alt="frame" className="frameImgPreview" />
-}
 
 function BgFrame() {
   return (
@@ -42,52 +39,21 @@ function BgFrame() {
   )
 }
 
-function SelectNum(data) {
-  return (
-    <div className="circle"><span>{data}</span></div>
-    // 1 부분을 number로 바꾸어 주고 동적으로 해야할 것.
-  )
-}
-
-function ImgList() {
-function select(id, num) {
-  const rootElement = document.getElementById(id);
-  const elemet = React.createElement("SelectNum");
-  ReactDOM.render(elemet, rootElement); // (주입할 대상, root) -> 자바스크립트로 따지면 append()
-}
-  return (
-    <table className="ImageTable">
-      <tbody>
-        <tr>
-          <td onClick={() => select(this.id, 0)}><img src={imageSet[0]} alt="exampleImg" className="captureImg" id="img1" /></td>
-          <td onClick={() => select(this.id, 1)}><img src={imageSet[1]} alt="exampleImg" className="captureImg" id="img2" /></td>
-        </tr>
-        <tr>
-          <td onClick={() => select(this.id, 2)}><img src={imageSet[2]} alt="exampleImg" className="captureImg" id="img3" /></td>
-          <td onClick={() => select(this.id, 3)}><img src={imageSet[3]} alt="exampleImg" className="captureImg" id="img4" /></td>
-        </tr>
-        <tr>
-          <td onClick={() => select(this.id, 4)}><img src={imageSet[4]} alt="exampleImg" className="captureImg" id="img5" /></td>
-          <td onClick={() => select(this.id, 5)}><img src={imageSet[5]} alt="exampleImg" className="captureImg" id="img6" /></td>
-        </tr>
-        <tr>
-          <td onClick={() => select(this.id, 6)}><img src={imageSet[6]} alt="exampleImg" className="captureImg" id="img7" /></td>
-          <td onClick={() => select(this.id, 7)}><img src={imageSet[7]} alt="exampleImg" className="captureImg" id="img8" /></td>
-        </tr>
-      </tbody>
-    </table>
-  )
-}
-
 function ImgTable() {
   const [selectedImageIndex, setSelectedImageIndex] = useState([]);
   const [ ,test] = useState();
   const forceUpdate = useCallback(() => test({}), []);
+
+  const myContext = useContext(AppContext);
+
   const handleImageClick = (index) => () => {
     if(selectedImageIndex.includes(index))
       selectedImageIndex.splice(selectedImageIndex.indexOf(index));
+
     else if(selectedImageIndex.length < 4)
       selectedImageIndex.push(index);
+
+      // imgPrevList.push(index);
     forceUpdate();
     console.log(selectedImageIndex);
   }
@@ -95,16 +61,10 @@ function ImgTable() {
   const renderNumber = (n) => {
     if(selectedImageIndex.indexOf(n) >= 0){
     return (
-      <div style={{ position: 'absolute', top: 0, left: 0, background: 'white' }}>
-        <p>{selectedImageIndex.indexOf(n) + 1}</p>
-      </div>
-    );
-    }
-    else{
-      return (
-      <div style={{ position: 'absolute', top: 0, left: 0, background: 'white' }}>
-        <p>
-        </p>
+      <div className="circle">
+        <span>
+          {selectedImageIndex.indexOf(n) + 1}
+        </span>
       </div>
     );
     }
@@ -117,45 +77,65 @@ function ImgTable() {
   }
 
   return (
+    <div>
+      <div className="frameImgPreview">
+        <table className='prevSCtable'>
+          <tbody>
+            <tr>
+              <img src={imageSet[selectedImageIndex[0]]} className="prevFrameSC" />
+            </tr>
+            <tr>
+              <img src={imageSet[selectedImageIndex[1]]} className="prevFrameSC" />
+            </tr>
+            <tr>
+              <img src={imageSet[selectedImageIndex[2]]} className="prevFrameSC" />
+            </tr>
+            <tr>
+              <img src={imageSet[selectedImageIndex[3]]} className="prevFrameSC" />
+            </tr>
+          </tbody>
+        </table>
+        <img src={frameNum(myContext.FValue)} alt="frame" className="prevFrame" />
+      </div>
     <table className="ImageTable">
       <tbody>
         <tr>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[0]} onClick={handleImageClick(0)} value className="captureImg0" />
+            <img src={imageSet[0]} onClick={handleImageClick(0)} value className="captureImg" />
             {renderNumber(0)}
           </td>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[1]} onClick={handleImageClick(1)} className="captureImg1" />
+            <img src={imageSet[1]} onClick={handleImageClick(1)} className="captureImg" />
             {renderNumber(1)}
           </td>
         </tr>
         <tr>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[2]} onClick={handleImageClick(2)} className="captureImg2" />
+            <img src={imageSet[2]} onClick={handleImageClick(2)} className="captureImg" />
             {renderNumber(2)}
           </td>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[3]} onClick={handleImageClick(3)} className="captureImg3" />
+            <img src={imageSet[3]} onClick={handleImageClick(3)} className="captureImg" />
             {renderNumber(3)}
           </td>
         </tr>
         <tr>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[4]} onClick={handleImageClick(4)} className="captureImg4" />
+            <img src={imageSet[4]} onClick={handleImageClick(4)} className="captureImg" />
             {renderNumber(4)}
           </td>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[5]} onClick={handleImageClick(5)} className="captureImg5" />
+            <img src={imageSet[5]} onClick={handleImageClick(5)} className="captureImg" />
             {renderNumber(5)}
           </td>
         </tr>
         <tr>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[6]} onClick={handleImageClick(6)} className="captureImg6" />
+            <img src={imageSet[6]} onClick={handleImageClick(6)} className="captureImg" />
             {renderNumber(6)}
           </td>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[7]} onClick={handleImageClick(7)} className="captureImg7" />
+            <img src={imageSet[7]} onClick={handleImageClick(7)} className="captureImg" />
             {renderNumber(7)}
           </td>
         </tr>
@@ -164,6 +144,7 @@ function ImgTable() {
         <button onClick={handleSaveClick}>저장</button>
       </div>
     </table>
+    </div>
   );
 }
 
@@ -181,12 +162,12 @@ function Select() {
       <h1 className="title">{myContext.FValue}</h1>
       <h2 className='tiltle2'></h2>
       <div className="centerContainer">
-        <Frame></Frame>
         <ImgTable></ImgTable>
-        {/* <ImgList></ImgList> */}
       </div>
     </div>
   )
 }
 
 export default Select;
+
+
