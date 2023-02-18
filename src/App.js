@@ -14,6 +14,7 @@ import Frame1 from "./img/Frame_navy_480.png";
 import Frame2 from "./img/Frame_skhu_480.png";
 import Frame3 from "./img/Frame_yellowgreen_480.png";
 
+let checker = "";
 let imageSet = [];
 let imageSelected4 = [];
 

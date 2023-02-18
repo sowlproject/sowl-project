@@ -8,22 +8,27 @@ import NextButton from './nextButton.js';
 import { Link } from "react-router-dom";
 import imageSelected4 from "./App";
 import selectedFrame from "./Frame"; // 고친부분("./App" --> "./Frame")
-import Frame0 from "./img/Frame_black_480.png";
-import Frame1 from "./img/Frame_navy_480.png";
-import Frame2 from "./img/Frame_skhu_480.png";
-import Frame3 from "./img/Frame_yellowgreen_480.png";
+import Frame0 from  "./Frame";
+import Frame1 from "./Frame";
+import Frame2 from "./Frame";
+import Frame3 from "./Frame";
+import checker from "./Frame";
 
 function frameNum() {
-  if (selectedFrame === 0) {
+  if (checker == "Black") {
+    console.log(checker);
     return Frame0;
   }
-  else if (selectedFrame === 1) {
+  else if (checker == "Navy") {
+    console.log(checker);
     return Frame1;
   }
-  else if (selectedFrame === 2) {
+  else if (checker == "SKHU") {
+    console.log(checker);
     return Frame2;
   }
-  else {
+  else if(checker == "YellowGreen") {
+    console.log(checker);
     return Frame3;
   }
 }
@@ -52,7 +57,6 @@ let img4 = 0;
 let img5 = 0;
 let img6 = 0;
 let img7 = 0;
-
 
 function SelectNum() {
   return (

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./Frame.scss";
+import checked from "./App";
 export default class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             selectValue: "Black"
+            
         };
     }
     handleChange = (e) => {
@@ -27,6 +29,7 @@ export default class App extends Component {
                         <td>
                             <input id="Black" value="Black" name="black" type="radio" className="inputradio"
                             checked={this.state.selectValue === "Black"}
+                            
                             onChange={this.handleChange}/>
                         </td>
                         <td>
