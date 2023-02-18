@@ -42,9 +42,21 @@ function BgFrame() {
   )
 }
 
-function SelectNum(data) {
+let selectData = 1;
+
+let img0 = 0;
+let img1 = 0;
+let img2 = 0;
+let img3 = 0;
+let img4 = 0;
+let img5 = 0;
+let img6 = 0;
+let img7 = 0;
+
+
+function SelectNum() {
   return (
-    <div className="circle"><span>{data}</span></div>
+    <div className="circle"><span>{selectData}</span></div>
     // 1 부분을 number로 바꾸어 주고 동적으로 해야할 것.
   )
 }
