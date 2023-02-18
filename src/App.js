@@ -6,7 +6,6 @@ import Home from './Home.js';
 import Frame from './Frame.js';
 import Camera from './Camera.js';
 import Select from './Select.js';
-import Radio from './Radiotest.js';
 import ReactAudioPlayer from "react-audio-player";
 import bgmusic from "./bgm/여름밤의꿈1.mp3";
 import Frame0 from "./img/Frame_black_480.png";
@@ -17,8 +16,6 @@ import AppContext from './AppContext';
 
 let imageSet = [];
 let imageSelected4 = [];
-
-
 
 export function App() {
   const handle = useFullScreenHandle();
@@ -42,7 +39,6 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/Home" element={<Home />} />
               <Route path="/frame" element={<Frame value={FV} />} />
-              <Route path="/radio" element={<Radio />} />
               <Route path="/camera" element={<Camera imageSrc={imageSet} selected={imageSelected4} />} />
               <Route path='/Select' element={<Select imageSrc={imageSet} />} />
             </Routes>

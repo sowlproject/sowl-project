@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
-import Radio from './Radiotest.js';
 import NextButton from './nextButton.js';
 //import {setFValue} from "./App";
 import Frame0 from "./img/Frame_black_480.png";
@@ -12,7 +11,6 @@ import AppContext from './AppContext';
 
 export default function Frame(props) {
     
-
     const myContext = useContext(AppContext);
     
     return (
@@ -26,15 +24,33 @@ export default function Frame(props) {
                     <td>YellowGreen</td>
                 </tr>
                 <tr>
-                    <td onClick={() => myContext.setFrame(0)}><img src={Frame0} className="frame_base" alt="camera_icon"></img></td>
-                    <td onClick={() => myContext.setFrame(1)}><img src={Frame1} className="frame_base" alt="camera_icon"></img></td>
-                    <td onClick={() => myContext.setFrame(2)}><img src={Frame2} className="frame_base" alt="camera_icon"></img></td>
-                    <td onClick={() => myContext.setFrame(3)}><img src={Frame3} className="frame_base" alt="camera_icon"></img></td>
+                    <td><img src={Frame0} className="frame_base" alt="camera_icon"></img></td>
+                    <td><img src={Frame1} className="frame_base" alt="camera_icon"></img></td>
+                    <td><img src={Frame2} className="frame_base" alt="camera_icon"></img></td>
+                    <td><img src={Frame3} className="frame_base" alt="camera_icon"></img></td>
                 </tr>
             </table>
-            <Radio></Radio>
+            <table className="radioTable">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input onClick={() => myContext.setFrame(0)} id="Black" value="Black" name="black" type="radio" className="inputradio"/>
+                        </td>
+                        <td>
+                            <input onClick={() => myContext.setFrame(1)} id="Navy" value="Navy" name="black" type="radio" className="inputradio"/>
+                        </td>
+                        <td>
+                            <input onClick={() => myContext.setFrame(2)} id="SKHU" value="SKHU" name="black" type="radio" className="inputradio"/>
+                        </td>
+                        <td>
+                            <input onClick={() => myContext.setFrame(3)} id="YellowGreen" value="YellowGreen" name="black" type="radio" className="inputradio"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <Link to="/Camera"><NextButton></NextButton></Link>
             <br></br>
         </div>
+        
     );
 }

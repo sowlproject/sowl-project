@@ -50,36 +50,6 @@ function SelectNum(data) {
 }
 
 function ImgList() {
-
-
-// // 기존 8개의 사진이 들어있는 배열에서 선택한 사진을 또다른 배열에 다시 담는 함수
-// function selectImgFile(a) {
-//   if (a === 0) {
-//     imageSelected4.push(imageSet[0]);
-//   }
-//   else if (a === 1) {
-//     imageSelected4.push(imageSet[1]);
-//   }
-//   else if (a === 2) {
-//     imageSelected4.push(imageSet[2]);
-//   }
-//   else if(a === 3) {
-//     imageSelected4.push(imageSet[3]);
-//   }
-//   else if(a === 4) {
-//     imageSelected4.push(imageSet[4]);
-//   }
-//   else if(a === 5) {
-//     imageSelected4.push(imageSet[5]);
-//   }
-//   else if(a === 6) {
-//     imageSelected4.push(imageSet[6]);
-//   }
-//   else if(a === 7) {
-//     imageSelected4.push(imageSet[7]);
-//   }
-
-// }
 function select(id, num) {
   const rootElement = document.getElementById(id);
   const elemet = React.createElement("SelectNum");
