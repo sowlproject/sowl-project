@@ -53,22 +53,29 @@
     display: inline-block;
 }
 
+.inputradio {
+    margin-right: 98px;
+    margin-left: 98px;
+    display: inline-block;
+    align-content: center;
+}
+
 [type="radio"] {
     appearance: none;
     border: max(2px, 0.1em) solid gray;
-    border-radius: 50%;
+    border-radius: 15%;
     width: 1.5em;
     height: 1.5em;
     transition: border 0.5s ease-in-out;
 }
 
 [type="radio"]:checked {
-    border: 0.4em solid tomato;
+    border: 0.4em solid rgb(255, 73, 41);
 }
 
 [type="radio"]:focus-visible {
     outline-offset: max(2px, 0.1em);
-    outline: max(2px, 0.1em) dotted tomato;
+    outline: max(2px, 0.1em) dotted rgb(255, 59, 25);
 }
 
 [type="radio"]:hover {

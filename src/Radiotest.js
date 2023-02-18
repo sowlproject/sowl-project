@@ -22,18 +22,18 @@ export default class App extends Component {
 
         return (
             <div className="radio">
-                <input id="Black" value="Black" name="platform" type="radio"
+                <input id="Black" value="Black" name="black" type="radio" className="inputradio"
                     checked={this.state.selectValue === "Black"}
-                    onChange={this.handleChange}/> Black
-                <input id="Navy" value="Navy" name="platform" type="radio"
+                    onChange={this.handleChange}/>
+                <input id="Navy" value="Navy" name="black" type="radio" className="inputradio"
                     checked={this.state.selectValue === "Navy"}
-                    onChange={this.handleChange}/> Navy
-                <input id="SKHU" value="SKHU" name="platform" type="radio"
+                    onChange={this.handleChange}/>
+                <input id="SKHU" value="SKHU" name="black" type="radio" className="inputradio"
                     checked={this.state.selectValue === "SKHU"}
-                    onChange={this.handleChange}/>SKHU
-                <input id="YellowGreen" value="YellowGreen" name="platform" type="radio"
+                    onChange={this.handleChange}/>
+                <input id="YellowGreen" value="YellowGreen" name="black" type="radio" className="inputradio"
                     checked={this.state.selectValue === "YellowGreen"}
-                    onChange={this.handleChange}/>YellowGreen
+                    onChange={this.handleChange}/>
             </div>
         );
     }
