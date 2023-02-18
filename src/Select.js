@@ -1,4 +1,4 @@
-import {React, useContext, useState} from 'react';
+import {React, useCallback, useContext, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import "./Select.scss";
 import "./Frame.scss";
@@ -79,98 +79,93 @@ function select(id, num) {
   )
 }
 
-function MyComponent() {
-  const [clickedCells, setClickedCells] = useState(Array(8).fill(false));
-  const [cellNumbers, setCellNumbers] = useState(Array(8).fill(null));
+function ImgTable() {
+  const [selectedImageIndex, setSelectedImageIndex] = useState([]);
+  const [ ,test] = useState();
+  const forceUpdate = useCallback(() => test({}), []);
+  const handleImageClick = (index) => () => {
+    if(selectedImageIndex.includes(index))
+      selectedImageIndex.splice(selectedImageIndex.indexOf(index));
+    else if(selectedImageIndex.length < 4)
+      selectedImageIndex.push(index);
+    forceUpdate();
+    console.log(selectedImageIndex);
+  }
 
-  const handleCellClick = (cellIndex) => {
-    setClickedCells((prevState) => {
-      const newState = [...prevState];
-      newState[cellIndex] = true;
-      return newState;
-    });
-    setCellNumbers((prevState) => {
-      const newState = [...prevState];
-      newState[cellIndex] = getUniqueNumber();
-      return newState;
-    });
-  };
-
-  const handleSaveButtonClick = () => {
-    const selectedImages = [];
-    for (let i = 0; i < clickedCells.length; i++) {
-      if (clickedCells[i]) {
-        selectedImages.push({
-          cellIndex: i,
-          imageUrl: '...' // 이미지의 URL을 저장
-        });
-      }
+  const renderNumber = (n) => {
+    if(selectedImageIndex.indexOf(n) >= 0){
+    return (
+      <div style={{ position: 'absolute', top: 0, left: 0, background: 'white' }}>
+        <p>{selectedImageIndex.indexOf(n) + 1}</p>
+      </div>
+    );
     }
-    console.log(selectedImages);
-  };
-
-  const getUniqueNumber = () => {
-    const usedNumbers = cellNumbers.filter((number) => number !== null);
-    const availableNumbers = [1, 2, 3, 4].filter((number) => !usedNumbers.includes(number));
-    if (availableNumbers.length > 0) {
-      const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-      return availableNumbers[randomIndex];
-    } else {
-      return null;
+    else{
+      return (
+      <div style={{ position: 'absolute', top: 0, left: 0, background: 'white' }}>
+        <p>
+        </p>
+      </div>
+    );
     }
-  };
+  }
+
+  const handleSaveClick = () => {
+    if (selectedImageIndex !== null) {
+      console.log(`이미지 ${selectedImageIndex + 1}이 저장되었습니다.`);
+    }
+  }
 
   return (
-    <div>
-      <table className="ImageTable">
-        <tbody>
-          <tr>
-            <td onClick={() => handleCellClick(0)}>
-              <img src={imageSet[0]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[0]}</div>
-            </td>
-            <td onClick={() => handleCellClick(1)}>
-              <img src={imageSet[1]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[1]}</div>
-            </td>
-          </tr>
-          <tr>
-            <td onClick={() => handleCellClick(2)}>
-              <img src={imageSet[2]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[2]}</div>
-            </td>
-            <td onClick={() => handleCellClick(3)}>
-              <img src={imageSet[3]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[3]}</div>
-            </td>
-          </tr>
-          <tr>
-            <td onClick={() => handleCellClick(4)}>
-              <img src={imageSet[4]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[4]}</div>
-            </td>
-            <td onClick={() => handleCellClick(5)}>
-              <img src={imageSet[5]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[5]}</div>
-            </td>
-          </tr>
-          <tr>
-            <td onClick={() => handleCellClick(6)}>
-              <img src={imageSet[6]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[6]}</div>
-            </td>
-            <td onClick={() => handleCellClick(7)}>
-              <img src={imageSet[7]} alt="..." className="captureImg" />
-              <div style={{ display: "inline-block" }}>{cellNumbers[7]}</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button onClick={handleSaveButtonClick}>Save</button>
-    </div>
+    <table className="ImageTable">
+      <tbody>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[0]} onClick={handleImageClick(0)} value className="captureImg0" />
+            {renderNumber(0)}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[1]} onClick={handleImageClick(1)} className="captureImg1" />
+            {renderNumber(1)}
+          </td>
+        </tr>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[2]} onClick={handleImageClick(2)} className="captureImg2" />
+            {renderNumber(2)}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[3]} onClick={handleImageClick(3)} className="captureImg3" />
+            {renderNumber(3)}
+          </td>
+        </tr>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[4]} onClick={handleImageClick(4)} className="captureImg4" />
+            {renderNumber(4)}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[5]} onClick={handleImageClick(5)} className="captureImg5" />
+            {renderNumber(5)}
+          </td>
+        </tr>
+        <tr>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[6]} onClick={handleImageClick(6)} className="captureImg6" />
+            {renderNumber(6)}
+          </td>
+          <td style={{ position: 'relative' }}>
+            <img src={imageSet[7]} onClick={handleImageClick(7)} className="captureImg7" />
+            {renderNumber(7)}
+          </td>
+        </tr>
+      </tbody>
+      <div>
+        <button onClick={handleSaveClick}>저장</button>
+      </div>
+    </table>
   );
 }
-
 
 function Select() {
   const myContext = useContext(AppContext);
@@ -187,7 +182,7 @@ function Select() {
       <h2 className='tiltle2'></h2>
       <div className="centerContainer">
         <Frame></Frame>
-        <MyComponent></MyComponent>
+        <ImgTable></ImgTable>
         {/* <ImgList></ImgList> */}
       </div>
     </div>
