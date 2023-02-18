@@ -36,6 +36,10 @@ body { overflow: hidden; }
   border-spacing: 10px;
 }
 
+.ImageTable tbody tr td:hover {
+  cursor: pointer;
+}
+
 .frameImgPreview {
   display: inline-block;
   width: 220px;
