@@ -79,94 +79,98 @@ function select(id, num) {
   )
 }
 
-function ImgTable() {
-  const [selectedImages, setSelectedImages] = useState([]);
-  const [imageNumbers, setImageNumbers] = useState({});
-  
-  const handleImageClick = (event) => {
-    const tdElement = event.target.closest("td");
-    const tdIndex = Array.from(tdElement.parentNode.children).indexOf(tdElement) + 1;
-    
-    if (selectedImages.length < 4 && !imageNumbers[tdIndex]) {
-      const newSelectedImages = [...selectedImages];
-      newSelectedImages.push(event.target.src);
-      setSelectedImages(newSelectedImages);
-      
-      const newImageNumbers = {...imageNumbers};
-      newImageNumbers[tdIndex] = selectedImages.length + 1;
-      setImageNumbers(newImageNumbers);
-    }
+function MyComponent() {
+  const [clickedCells, setClickedCells] = useState(Array(8).fill(false));
+  const [cellNumbers, setCellNumbers] = useState(Array(8).fill(null));
+
+  const handleCellClick = (cellIndex) => {
+    setClickedCells((prevState) => {
+      const newState = [...prevState];
+      newState[cellIndex] = true;
+      return newState;
+    });
+    setCellNumbers((prevState) => {
+      const newState = [...prevState];
+      newState[cellIndex] = getUniqueNumber();
+      return newState;
+    });
   };
-  
-  const handleDeleteClick = (index) => {
-    const newSelectedImages = [...selectedImages];
-    newSelectedImages.splice(index, 1);
-    setSelectedImages(newSelectedImages);
-    
-    const newImageNumbers = {...imageNumbers};
-    for (let key in newImageNumbers) {
-      if (newImageNumbers[key] > index) {
-        newImageNumbers[key] -= 1;
-      }
-      if (newImageNumbers[key] === index + 1) {
-        delete newImageNumbers[key];
+
+  const handleSaveButtonClick = () => {
+    const selectedImages = [];
+    for (let i = 0; i < clickedCells.length; i++) {
+      if (clickedCells[i]) {
+        selectedImages.push({
+          cellIndex: i,
+          imageUrl: '...' // 이미지의 URL을 저장
+        });
       }
     }
-    setImageNumbers(newImageNumbers);
+    console.log(selectedImages);
   };
-  
-  const renderNumber = (tdIndex) => {
-    if (imageNumbers[tdIndex]) {
-      return (
-        <div style={{ position: "absolute", top: 0, left: 0 }}>
-          {imageNumbers[tdIndex]}
-          <button onClick={() => handleDeleteClick(imageNumbers[tdIndex] - 1)}>
-            X
-          </button>
-        </div>
-      );
+
+  const getUniqueNumber = () => {
+    const usedNumbers = cellNumbers.filter((number) => number !== null);
+    const availableNumbers = [1, 2, 3, 4].filter((number) => !usedNumbers.includes(number));
+    if (availableNumbers.length > 0) {
+      const randomIndex = Math.floor(Math.random() * availableNumbers.length);
+      return availableNumbers[randomIndex];
+    } else {
+      return null;
     }
-    return null;
   };
-  
-  const renderTable = () => {
-    const table = [];
-    for (let i = 0; i < 2; i++) {
-      const children = [];
-      for (let j = 0; j < 4; j++) {
-        const tdIndex = i * 4 + j + 1;
-        children.push(
-          <td key={tdIndex} onClick={handleImageClick}>
-            <img src={`image${tdIndex}.jpg`} alt={`Image ${tdIndex}`} />
-            {renderNumber(tdIndex)}
-          </td>
-        );
-      }
-      table.push(<tr key={i}>{children}</tr>);
-    }
-    return <table><tbody>{table}</tbody></table>;
-  };
-  
-  const renderSelectedImages = () => {
-    return (
-      <div>
-        <p>Selected Images:</p>
-        {selectedImages.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Selected Image ${index + 1}`} />
-          </div>
-        ))}
-      </div>
-    );
-  };
-  
+
   return (
     <div>
-      {renderTable()}
-      {renderSelectedImages()}
+      <table className="ImageTable">
+        <tbody>
+          <tr>
+            <td onClick={() => handleCellClick(0)}>
+              <img src={imageSet[0]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[0]}</div>
+            </td>
+            <td onClick={() => handleCellClick(1)}>
+              <img src={imageSet[1]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[1]}</div>
+            </td>
+          </tr>
+          <tr>
+            <td onClick={() => handleCellClick(2)}>
+              <img src={imageSet[2]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[2]}</div>
+            </td>
+            <td onClick={() => handleCellClick(3)}>
+              <img src={imageSet[3]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[3]}</div>
+            </td>
+          </tr>
+          <tr>
+            <td onClick={() => handleCellClick(4)}>
+              <img src={imageSet[4]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[4]}</div>
+            </td>
+            <td onClick={() => handleCellClick(5)}>
+              <img src={imageSet[5]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[5]}</div>
+            </td>
+          </tr>
+          <tr>
+            <td onClick={() => handleCellClick(6)}>
+              <img src={imageSet[6]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[6]}</div>
+            </td>
+            <td onClick={() => handleCellClick(7)}>
+              <img src={imageSet[7]} alt="..." className="captureImg" />
+              <div style={{ display: "inline-block" }}>{cellNumbers[7]}</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button onClick={handleSaveButtonClick}>Save</button>
     </div>
   );
 }
+
 
 function Select() {
   const myContext = useContext(AppContext);
@@ -183,7 +187,7 @@ function Select() {
       <h2 className='tiltle2'></h2>
       <div className="centerContainer">
         <Frame></Frame>
-        <ImgTable></ImgTable>
+        <MyComponent></MyComponent>
         {/* <ImgList></ImgList> */}
       </div>
     </div>
