@@ -29,10 +29,9 @@ export default function Frame() {
                     <td onClick={() => setFrame(2)}><img src={Frame2} className="frame_base" alt="camera_icon"></img></td>
                     <td onClick={() => setFrame(3)}><img src={Frame3} className="frame_base" alt="camera_icon"></img></td>
                 </tr>
-                <tr>
-                    <Radio></Radio>
-                </tr>
             </table>
+            <Radio></Radio>
+            <br></br>
             <Link to="/Camera">go to Camera</Link>
         </div>
     );

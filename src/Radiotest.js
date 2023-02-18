@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./Frame.scss";
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -21,11 +21,10 @@ export default class App extends Component {
         console.log(`this.state.selectValue : ${this.state.selectValue}`);
 
         return (
-            <div className="App">
-                <br></br><br></br><br></br><br></br><br></br>
+            <div className="radio">
                 <input id="Black" value="Black" name="platform" type="radio"
                     checked={this.state.selectValue === "Black"}
-                    onChange={this.handleChange}/>Black
+                    onChange={this.handleChange}/> Black
                 <input id="Navy" value="Navy" name="platform" type="radio"
                     checked={this.state.selectValue === "Navy"}
                     onChange={this.handleChange}/> Navy
