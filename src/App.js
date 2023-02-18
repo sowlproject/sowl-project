@@ -8,7 +8,7 @@ import Camera from './Camera.js';
 import Select from './Select.js';
 import Radio from './Radiotest.js';
 import ReactAudioPlayer from "react-audio-player";
-import bgmusic from "./여름밤의꿈1.mp3";
+import bgmusic from "./bgm/여름밤의꿈1.mp3";
 
 let imageSet = [];
 let imageSelected4 = [];
