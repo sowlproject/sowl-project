@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-
+body {
+    text-align: center;
+}
 .FrameDiv {
     background-color: #B7D3E9;
     height: 100vh;
@@ -26,6 +28,7 @@
     padding-top: 1vh;
     width: 796px;
     height: 660px;
+    margin-bottom: -1%;
 }
 
 .frame_name {
@@ -47,30 +50,33 @@
     width: 195px;
 }
 
-.radio {
-    font-family: "Noto Sans KR";
-    height: 40px;
+.radioTable {
+    text-align: center;
     display: inline-block;
 }
 
+.radioTable td {
+    width: 195px;
+    text-align: center;
+}
+
 .inputradio {
-    margin-right: 98px;
-    margin-left: 98px;
     display: inline-block;
-    align-content: center;
 }
 
 [type="radio"] {
     appearance: none;
-    border: max(2px, 0.1em) solid gray;
+    // border: max(2px, 0.1em) solid gray;
+    background-color: white;
     border-radius: 15%;
-    width: 1.5em;
-    height: 1.5em;
-    transition: border 0.5s ease-in-out;
+    width: 2em;
+    height: 2em;
+    transition: border 0s ease-in-out;
 }
 
 [type="radio"]:checked {
-    border: 0.4em solid rgb(255, 73, 41);
+    border: 0.45em solid white;
+    background-color: rgb(255, 59, 25);
 }
 
 [type="radio"]:focus-visible {

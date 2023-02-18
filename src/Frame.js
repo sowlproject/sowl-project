@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Frame.scss";
 import Radio from './Radiotest.js';
+import NextButton from './nextButton.js';
 import selectedFrame from "./App";
 import Frame0 from "./img/Frame_black_480.png";
 import Frame1 from "./img/Frame_navy_480.png";
@@ -31,8 +32,8 @@ export default function Frame() {
                 </tr>
             </table>
             <Radio></Radio>
+            <Link to="/Camera"><NextButton></NextButton></Link>
             <br></br>
-            <Link to="/Camera">go to Camera</Link>
         </div>
     );
 }

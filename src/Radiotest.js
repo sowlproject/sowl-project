@@ -21,20 +21,32 @@ export default class App extends Component {
         console.log(`this.state.selectValue : ${this.state.selectValue}`);
 
         return (
-            <div className="radio">
-                <input id="Black" value="Black" name="black" type="radio" className="inputradio"
-                    checked={this.state.selectValue === "Black"}
-                    onChange={this.handleChange}/>
-                <input id="Navy" value="Navy" name="black" type="radio" className="inputradio"
-                    checked={this.state.selectValue === "Navy"}
-                    onChange={this.handleChange}/>
-                <input id="SKHU" value="SKHU" name="black" type="radio" className="inputradio"
-                    checked={this.state.selectValue === "SKHU"}
-                    onChange={this.handleChange}/>
-                <input id="YellowGreen" value="YellowGreen" name="black" type="radio" className="inputradio"
-                    checked={this.state.selectValue === "YellowGreen"}
-                    onChange={this.handleChange}/>
-            </div>
+            <table className="radioTable">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input id="Black" value="Black" name="black" type="radio" className="inputradio"
+                            checked={this.state.selectValue === "Black"}
+                            onChange={this.handleChange}/>
+                        </td>
+                        <td>
+                            <input id="Navy" value="Navy" name="black" type="radio" className="inputradio"
+                            checked={this.state.selectValue === "Navy"}
+                            onChange={this.handleChange}/>
+                        </td>
+                        <td>
+                            <input id="SKHU" value="SKHU" name="black" type="radio" className="inputradio"
+                            checked={this.state.selectValue === "SKHU"}
+                        onChange={this.handleChange}/>
+                        </td>
+                        <td>
+                            <input id="YellowGreen" value="YellowGreen" name="black" type="radio" className="inputradio"
+                            checked={this.state.selectValue === "YellowGreen"}
+                            onChange={this.handleChange}/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         );
     }
 }
