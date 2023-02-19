@@ -117,7 +117,7 @@ function Export() {
           </br>다운로드하실 수 있습니다.<br>
           </br>&#40;제한시간: 10분&#41;<br>
           </br>사진은 해상도를 위해 <br>
-          </br>960x1440으로 저장됩니다.</h1>
+          </br>480x1440으로 저장됩니다.</h1>
           <div className='ExportBgFrame1'>
               <BgFrame></BgFrame>
           </div>
