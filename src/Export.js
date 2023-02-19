@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 //import imgbbUploader from "imgbb-uploader";
 import QRCode from "react-qr-code";
 import imageSelected4 from "./App";
+import './Export.scss';
 import ExportButton from './ExportButton.js';
 import { createCanvas, loadImage } from 'canvas';
 import AppContext from './AppContext';
@@ -48,7 +49,7 @@ async function mergeImages(imageDataArray) {
 };
 
 
-
+let justOne = 0;
 
 let isTrue = false;
 let tmp ;
@@ -57,13 +58,14 @@ function Export() {
 
   function Qrtest(url) {
     return (
-        <div style={{ background: 'white', padding: '16px' }}>
+        <div className='qrcodeDiv'>
             <br></br><br></br><br></br><br></br>
         <QRCode 
         size={256}
         style={{ height: "auto", maxWidth: "10%", width: "100%" }}
         value={url}
-        viewBox={`0 0 256 256`}/>
+        viewBox={`0 0 256 256`}
+        />
         </div>
     );
 }
@@ -82,7 +84,7 @@ function Export() {
       console.log("완료.");
       let form = new FormData();
       form.append("image", url.substring(22));
-      fetch('https://api.imgbb.com/1/upload?key=46cc197df26dbf3d3caf8c1a71605bd4', {
+      fetch('https://api.imgbb.com/1/upload?key=6b72f478726b2ed224c0222a359e2915', {
         method: 'post',
         body: form})
       .then(res => res.json())
@@ -94,15 +96,24 @@ function Export() {
   //test(myContext.imageSelected4);
   const forceUpdate = useCallback(() => test({}), []);
 
-  test2(myContext.imageSelected4);
+
+  if (justOne == 0 ) {
+    test2(myContext.imageSelected4);
+    justOne++;    
+  }
+
 
     return (
         <div className="FrameDiv">
-          <img src = {url} className='test'/>
-          <div>{test3()}</div>
-          {/* <button className="exportButton" onClick={()=>{test2(myContext.imageSelected4);}}>
-    출력
-    </button> */}
+          <h1 className="title">사진이 완성되었어요!</h1>
+          <img src = {url} className='exportImg'/>
+          {test3()}
+          <div className='QRcodebg'></div>
+          <h1 className="qrCaption">QR코드를 촬영하여 사진을<br>
+          </br>다운로드하실 수 있습니다.<br>
+          </br>&#40;제한시간: 10분&#41;<br>
+          </br>사진은 해상도를 위해 <br>
+          </br>960x1440으로 저장됩니다.</h1>
           <div className='ExportBgFrame1'>
               <BgFrame></BgFrame>
           </div>

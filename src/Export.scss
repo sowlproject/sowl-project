@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+.title {
+  font-family: "Noto Sans KR";
+  display: inline-block;
+
+  font-weight: 700;
+
+  font-size: 9vh;
+  margin: 0;
+  margin-top: 2%;
+  padding: 0;
+}
+
+.qrcodeDiv {
+  display: inline-block;
+  position: absolute;
+
+  width: 120%;
+
+  top: 17%;
+  left: 3%;
+
+  z-index: 3;
+}
+
+.QRcodebg {
+  display: inline-block;
+  position: absolute;
+
+  user-select: none;
+  -webkit-user-drag: none; 
+
+  width: 15%;
+  height: 30%;
+
+  top: 24%;
+  left: 55.5%;
+
+  background-color: white;
+
+  z-index: 2;
+}
+
+.qrCaption {
+  user-select: none;
+  -webkit-user-drag: none; 
+
+  font-family: "Noto Sans KR";
+  display: inline-block;
+  font-size: 4vh;
+
+  position: absolute;
+
+  color: white;
+
+  font-weight: bolder;
+
+  text-align: left;
+
+  top: 58%;
+
+  left: 53%;
+}
+
+.exportImg {
+  display: inline-block;
+  position: absolute;
+
+  width: 13%;
+
+  top: 20%;
+  left: 30%;
+}
