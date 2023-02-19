@@ -97,7 +97,7 @@ function Export() {
   const forceUpdate = useCallback(() => test({}), []);
 
 
-  if (justOne == 0 ) {
+  if (isTrue == 0 ) {
     test2(myContext.imageSelected4);
     justOne++;    
   }
