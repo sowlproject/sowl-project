@@ -3,6 +3,7 @@ import Webcam from "react-webcam";
 import "./Camera.scss";
 import { Link } from "react-router-dom";
 import imageSet from "./App";
+import shutterImg from "./img/shutter.png";
 
 const videoConstraints = {
     width: 405,
@@ -43,7 +44,7 @@ const Camera = () => {
             // mirrored={false} // 좌우반전 여부 설정 기본값:false
             />
             <h1 className="counter">{number}/8</h1>
-            <button className="shutter" onClick={capturePhoto_1}>Capture</button>
+            <button className="shutter" onClick={capturePhoto_1}></button>
             {/* <button onClick={() => setUrl(null)}>Refresh</button> */}
             {url && (
                 // <div id="photoboard" alt="Screenshot">
