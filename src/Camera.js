@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import imageSet from "./App";
 
 const videoConstraints = {
-    width: 421,
+    width: 405,
     height: 268,
     facingMode: "environment"
 };
@@ -16,7 +16,7 @@ const Camera = () => {
     const [url, setUrl] = React.useState(null);
     const capturePhoto_1 = React.useCallback(async () => {
         if (num === 7) {alert("8장 모두 촬영되었습니다. go to select 버튼을 눌러주세요!");return;} num++;
-        const imageTmp = webcamRef.current.getScreenshot({ width: 421, height: 268 });
+        const imageTmp = webcamRef.current.getScreenshot({ width: 405, height: 268 });
         imageSet[num] = imageTmp;
         setUrl(imageSet[num]);
         setNumber(prevNumber => prevNumber + 1);
