@@ -121,11 +121,11 @@ const Camera = () => {
 function BgFrame() {
     return (
         <div className='bgFrame'>
-          <div className='bgFrameSC'></div>
-          <div className='bgFrameSC'></div>
-          <div className='bgFrameSC'></div>
+            <div className='bgFrameSC'></div>
+            <div className='bgFrameSC'></div>
+            <div className='bgFrameSC'></div>
         </div>
     )
-  }
+}
 
 export default Camera;
