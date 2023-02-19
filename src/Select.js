@@ -4,15 +4,17 @@ import "./Select.scss";
 import "./Frame.scss";
 import "./bgFrame.scss";
 import imageSet from "./App";
-import imageSelected4 from "./App";
+//import imageSelected4 from "./App";
 import selectedFrame from "./App"; // 고친부분("./App" --> "./Frame")
 import NextButton from './nextButton.js';
-import Export from './Export.js';
 import Frame0 from "./img/Frame_black_480.png";
 import Frame1 from "./img/Frame_navy_480.png";
 import Frame2 from "./img/Frame_skhu_480.png";
 import Frame3 from "./img/Frame_yellowgreen_480.png";
 import AppContext from './AppContext';
+import config from './config.js';
+
+let selectedImageIndex = []
 
 function frameNum(selectedFrame) {
   if (selectedFrame === 0) {
@@ -41,7 +43,7 @@ function BgFrame() {
 }
 
 function ImgTable() {
-  const [selectedImageIndex, setSelectedImageIndex] = useState([]);
+  
   const [ ,test] = useState();
   const forceUpdate = useCallback(() => test({}), []);
 
@@ -49,7 +51,7 @@ function ImgTable() {
 
   const handleImageClick = (index) => () => {
     if(selectedImageIndex.includes(index))
-      selectedImageIndex.splice(selectedImageIndex.indexOf(index));
+      selectedImageIndex.splice(selectedImageIndex.indexOf(index), 1);
 
     else if(selectedImageIndex.length < 4)
       selectedImageIndex.push(index);
@@ -72,8 +74,14 @@ function ImgTable() {
   }
 
   const handleSaveClick = () => {
-    if (selectedImageIndex !== null) {
-      console.log(`이미지 ${selectedImageIndex + 1}이 저장되었습니다.`);
+    
+    if (selectedImageIndex.length == 4) {
+
+      myContext.imageSelected4[0] = (myContext.FValue < 2 ? (myContext.FValue == 0 ? config.black : config.navy) : (myContext.FValue == 2 ? config.skhu : config.yellowgreen));
+      let i = 1;
+      for (var key in selectedImageIndex) {
+        myContext.imageSelected4[i++] = imageSet[key];
+      }
     }
   }
 
@@ -142,7 +150,7 @@ function ImgTable() {
         </tr>
       </tbody>
       <div>
-        {/* <button onClick={handleSaveClick}>저장</button> */}
+        <button onClick={handleSaveClick}>저장</button>
       </div>
     </table>
     </div>
@@ -171,5 +179,3 @@ function Select() {
 }
 
 export default Select;
-
-
