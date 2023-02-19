@@ -160,7 +160,7 @@ function Select() {
       <div className='selectBgFrame2'>
         <BgFrame></BgFrame>
       </div>
-      <h1 className="title">{myContext.FValue}</h1>
+      <h1 className="title">사진을 선택해주세요</h1>
       <h2 className='tiltle2'></h2>
       <div className="centerContainer">
         <ImgTable></ImgTable>
