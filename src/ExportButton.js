@@ -4,7 +4,7 @@ import './App.scss';
 function ExportButton() {
   return (
     <button className="exportButton">
-    출력
+    종료
     </button>
   )
 }

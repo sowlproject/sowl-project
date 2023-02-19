@@ -102,6 +102,10 @@ function Export() {
     justOne++;    
   }
 
+  function done() {
+    window.location.replace("/Home");
+  }
+
 
     return (
         <div className="FrameDiv">
@@ -120,6 +124,7 @@ function Export() {
           <div className='ExportBgFrame2'>
               <BgFrame></BgFrame>
           </div>
+          <div onClick={done}><ExportButton></ExportButton></div>
         </div>
     );
 }
