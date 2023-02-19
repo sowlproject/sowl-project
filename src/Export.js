@@ -41,41 +41,6 @@ async function mergeImages(imageDataArray) {
   return mergedImage;
 }
 
-//API KEY: 46cc197df26dbf3d3caf8c1a71605bd4
-//API URL: https://api.imgbb.com/1/upload
-//API Documentation: https://api.imgbb.com/ , https://www.npmjs.com/package/imgbb-uploader
-// IMGBB_API_KEY = "46cc197df26dbf3d3caf8c1a71605bd4";
-// async function uploadImage(imagePath) {
-//   try {
-//     const response = await imgbbUploader(process.env.IMGBB_API_KEY, imagePath);
-//     console.log(response);
-//     // Log the image URL that was returned from imgbb.com
-//     console.log(response.url);
-//   } catch (error) {
-//     console.error(error);
-//   }
-//}
-
-// uploadImage('./FinalImage/*');
-// function imgToBase64ByFileReader(url) {
-//     return new Promise((resolve, reject) => {
-//       let xhr = new XMLHttpRequest();
-//       xhr.onload = () => {
-//         let reader = new FileReader();
-//         reader.onloadend = function () {
-//           resolve(reader.result);
-//           console.log(reader.result);
-//           document.getElementById('logo').setAttribute('src', reader.result);
-//         }
-//         reader.readAsDataURL(xhr.response);
-//       }
-//       xhr.open('GET', url);
-//       xhr.responseType = 'blob';
-//       xhr.send();
-//     });
-//   }
-
-// var resultprops = imgToBase64ByFileReader('./img/Frame_base_1.png');
  let options = {
      apiKey: "46cc197df26dbf3d3caf8c1a71605bd4",
      expiration: 15552000,
@@ -128,14 +93,16 @@ function Export() {
   const [ ,test] = useState();
   //test(myContext.imageSelected4);
   const forceUpdate = useCallback(() => test({}), []);
-  
+
+  test2(myContext.imageSelected4);
+
     return (
         <div className="FrameDiv">
           <img src = {url} className='test'/>
           <div>{test3()}</div>
-          <button className="exportButton" onClick={()=>{test2(myContext.imageSelected4);}}>
+          {/* <button className="exportButton" onClick={()=>{test2(myContext.imageSelected4);}}>
     출력
-    </button>
+    </button> */}
           <div className='ExportBgFrame1'>
               <BgFrame></BgFrame>
           </div>

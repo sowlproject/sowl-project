@@ -1,5 +1,5 @@
 import {React, useCallback, useContext, useState } from 'react';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Select.scss";
 import "./Frame.scss";
 import "./bgFrame.scss";
@@ -60,6 +60,8 @@ function ImgTable() {
     forceUpdate();
     console.log(selectedImageIndex);
   }
+  
+  const navigate = useNavigate();
 
   const renderNumber = (n) => {
     if(selectedImageIndex.indexOf(n) >= 0){
@@ -83,6 +85,8 @@ function ImgTable() {
         myContext.imageSelected4[i++] = imageSet[key];
       }
     }
+
+    navigate("/Export");
   }
 
   return (
@@ -150,7 +154,7 @@ function ImgTable() {
         </tr>
       </tbody>
       <div>
-        <button onClick={handleSaveClick}>저장</button>
+        <div onClick={ handleSaveClick }><NextButton></NextButton></div>
       </div>
     </table>
     </div>
@@ -173,7 +177,6 @@ function Select() {
       <div className="centerContainer">
         <ImgTable></ImgTable>
       </div>
-      <Link to="/Export"><NextButton></NextButton></Link>
     </div>
   )
 }
