@@ -5,18 +5,24 @@ import { Link } from "react-router-dom";
 import imageSet from "./App";
 import shutterImg from "./img/shutter.png";
 import NextButton from './nextButton.js';
+import play from './soundPlay.js';
+import ShutterSoundMP3 from './audio/shutterSound.mp3';
 
 const videoConstraints = {
     width: 405,
     height: 268,
     facingMode: "environment"
 };
+
 let num = -1;
+let shutNum = 0;
 
 const Camera = () => {
+
     const webcamRef = useRef(null);
     const [url, setUrl] = React.useState(null);
     const capturePhoto_1 = React.useCallback(async () => {
+        
         if (num === 7) {alert("8장 모두 촬영되었습니다. 다음 버튼을 눌러주세요!");return;} num++;
         const imageTmp = webcamRef.current.getScreenshot({ width: 405, height: 268 });
         imageSet[num] = imageTmp;
@@ -32,8 +38,23 @@ const Camera = () => {
     };
     const [number, setNumber] = React.useState(0);
 
+    const shutterSound = new Audio(ShutterSoundMP3);
+
+    const play = () => {
+        if(shutNum <= 7){
+            shutterSound.play();
+            shutNum++;
+        }
+    }
+
+
     return (
-        <div className="CameraDiv">
+        <div className="CameraDiv" onKeyDown={(e) => {
+            if(e.key === " "){
+                capturePhoto_1(); 
+                play();
+            }
+        }}>
             <Webcam className="Webcam"
                 ref={webcamRef}
                 audio={false} // 오디오 설정 false = mute
@@ -45,7 +66,7 @@ const Camera = () => {
             // mirrored={false} // 좌우반전 여부 설정 기본값:false
             />
             <h1 className="counter">{number}/8</h1>
-            <button className="shutter" onClick={capturePhoto_1}></button>
+            <button className="shutter" onClick={() => {capturePhoto_1(); play()}}></button>
             {/* <button onClick={() => setUrl(null)}>Refresh</button> */}
             {url && (
                 <div id="check_photosel">
@@ -60,6 +81,9 @@ const Camera = () => {
             </div>
             <div className='cameraBgFrame2'>
                 <BgFrame></BgFrame>
+            </div>
+            <div className="containerMent">
+                <div className="guideMent">셔터 버튼이나 spacebar 키를 눌러 사진을 찍을 수 있어요!</div>
             </div>
             <Link to="/Select"><NextButton></NextButton></Link>
         </div>
