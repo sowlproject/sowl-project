@@ -73,17 +73,17 @@ function ImgTable() {
     }
   }
 
-  // const handleSaveClick = () => {
+  const handleSaveClick = () => {
     
-  //   if (selectedImageIndex.length == 4) {
+    if (selectedImageIndex.length == 4) {
 
-  //     myContext.imageSelected4[0] = (myContext.FValue < 2 ? (myContext.FValue == 0 ? config.black : config.navy) : (myContext.FValue == 2 ? config.skhu : config.yellowgreen));
-  //     let i = 1;
-  //     for (var key in selectedImageIndex) {
-  //       myContext.imageSelected4[i++] = imageSet[key];
-  //     }
-  //   }
-  // }
+      myContext.imageSelected4[0] = (myContext.FValue < 2 ? (myContext.FValue == 0 ? config.black : config.navy) : (myContext.FValue == 2 ? config.skhu : config.yellowgreen));
+      let i = 1;
+      for (var key in selectedImageIndex) {
+        myContext.imageSelected4[i++] = imageSet[key];
+      }
+    }
+  }
 
   return (
     <div>
@@ -150,7 +150,7 @@ function ImgTable() {
         </tr>
       </tbody>
       <div>
-        {/* <button onClick={handleSaveClick}>저장</button> */}
+        <button onClick={handleSaveClick}>저장</button>
       </div>
     </table>
     </div>
