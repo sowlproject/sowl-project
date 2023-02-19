@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import imageSet from "./App";
 import shutterImg from "./img/shutter.png";
 import NextButton from './nextButton.js';
-import play from './soundPlay.js';
 import ShutterSoundMP3 from './audio/shutterSound.mp3';
 
 const videoConstraints = {
@@ -47,14 +46,15 @@ const Camera = () => {
         }
     }
 
+    const keyDown = e => {
+        if(e.key === "ArrowDown"){
+            capturePhoto_1(); 
+            play();
+        }
+    }
 
     return (
-        <div className="CameraDiv" onKeyDown={(e) => {
-            if(e.key === " "){
-                capturePhoto_1(); 
-                play();
-            }
-        }}>
+        <div className="CameraDiv" onKeyDown={keyDown}>
             <Webcam className="Webcam"
                 ref={webcamRef}
                 audio={false} // 오디오 설정 false = mute
@@ -66,7 +66,7 @@ const Camera = () => {
             // mirrored={false} // 좌우반전 여부 설정 기본값:false
             />
             <h1 className="counter">{number}/8</h1>
-            <button className="shutter" onClick={() => {capturePhoto_1(); play()}}></button>
+            <button className="shutter" id="shutterButton" autoFocus onClick={() => {capturePhoto_1(); play()}}></button>
             {/* <button onClick={() => setUrl(null)}>Refresh</button> */}
             {url && (
                 <div id="check_photosel">
@@ -83,7 +83,7 @@ const Camera = () => {
                 <BgFrame></BgFrame>
             </div>
             <div className="containerMent">
-                <div className="guideMent">셔터 버튼이나 spacebar 키를 눌러 사진을 찍을 수 있어요!</div>
+                <div className="guideMent">화면이 나올 때까지 기다려주세요<br></br><br></br>셔터 버튼이나 리모컨을 눌러서 찍을 수 있어요!</div>
             </div>
             <Link to="/Select"><NextButton></NextButton></Link>
         </div>

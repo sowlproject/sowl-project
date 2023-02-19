@@ -33,7 +33,6 @@ export function App() {
     <>
       <AppContext.Provider value={FV}>
         <FullScreen className="full-screen" handle={handle}>
-          <button class="fullscbutton" onClick={handle.enter}>전체화면</button>
           <ReactAudioPlayer src={bgmusic} autoPlay loop />
           <BrowserRouter>
             <Routes>
@@ -47,6 +46,7 @@ export function App() {
           </BrowserRouter>
         </FullScreen>
       </AppContext.Provider>
+      <button class="fullscbutton" onClick={handle.enter}>전체화면</button>
     </>
   )
 }

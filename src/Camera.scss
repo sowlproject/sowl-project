@@ -7,11 +7,12 @@
     background-color: #B7D3E9;
     height: 100vh;
     min-height: 100vh;
+
+    z-index: 2;
 }
 
 .prevCameraImgCaption {
     font-family: "Noto Sans KR";
-    user-select: none;
     -webkit-user-drag: none; 
 
     color: white;
