@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./Frame.scss";
 import NextButton from './nextButton.js';
 //import {setFValue} from "./App";
-import Frame0 from "./img/Frame_black_480.png";
-import Frame1 from "./img/Frame_navy_480.png";
-import Frame2 from "./img/Frame_skhu_480.png";
-import Frame3 from "./img/Frame_yellowgreen_480.png";
+import Frame0 from "./img/Frame_base_1.png";
+import Frame1 from "./img/Frame_base_2.png";
+import Frame2 from "./img/Frame_base_3.png";
+import Frame3 from "./img/Frame_base_4.png";
 import AppContext from './AppContext';
 
 export default function Frame(props) {
