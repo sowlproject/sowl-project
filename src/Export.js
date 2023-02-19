@@ -6,19 +6,19 @@ import ExportButton from './ExportButton.js';
 //API KEY: 46cc197df26dbf3d3caf8c1a71605bd4
 //API URL: https://api.imgbb.com/1/upload
 //API Documentation: https://api.imgbb.com/ , https://www.npmjs.com/package/imgbb-uploader
-IMGBB_API_KEY = "46cc197df26dbf3d3caf8c1a71605bd4";
-async function uploadImage(imagePath) {
-  try {
-    const response = await imgbbUploader(process.env.IMGBB_API_KEY, imagePath);
-    console.log(response);
-    // Log the image URL that was returned from imgbb.com
-    console.log(response.url);
-  } catch (error) {
-    console.error(error);
-  }
-}
+// IMGBB_API_KEY = "46cc197df26dbf3d3caf8c1a71605bd4";
+// async function uploadImage(imagePath) {
+//   try {
+//     const response = await imgbbUploader(process.env.IMGBB_API_KEY, imagePath);
+//     console.log(response);
+//     // Log the image URL that was returned from imgbb.com
+//     console.log(response.url);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
-uploadImage('./FinalImage/*');
+// uploadImage('./FinalImage/*');
 // function imgToBase64ByFileReader(url) {
 //     return new Promise((resolve, reject) => {
 //       let xhr = new XMLHttpRequest();
@@ -44,29 +44,29 @@ uploadImage('./FinalImage/*');
 //     base64string: {resultprops},
 // };
 
-function Qrtest() {
-    return (
-        <div style={{ background: 'white', padding: '16px' }}>
-            <br></br><br></br><br></br><br></br>
-        <QRCode 
-        size={256}
-        style={{ height: "auto", maxWidth: "10%", width: "100%" }}
-        value={"https://i.ibb.co/yqMdqKS/Group-27.png"}
-        viewBox={`0 0 256 256`}/>
-        </div>
-    );
-}
-imgbbUploader(options)
-    .then((response) => console.log(response))
-    .catch((error) => console.error(error));
+// function Qrtest() {
+//     return (
+//         <div style={{ background: 'white', padding: '16px' }}>
+//             <br></br><br></br><br></br><br></br>
+//         <QRCode 
+//         size={256}
+//         style={{ height: "auto", maxWidth: "10%", width: "100%" }}
+//         value={"https://i.ibb.co/yqMdqKS/Group-27.png"}
+//         viewBox={`0 0 256 256`}/>
+//         </div>
+//     );
+// }
+// imgbbUploader(options)
+//     .then((response) => console.log(response))
+//     .catch((error) => console.error(error));
 
 function Export() {
     return (
         <div className="FrameDiv">
 
+
+
           <ExportButton></ExportButton>
-
-
           <div className='ExportBgFrame1'>
               <BgFrame></BgFrame>
           </div>

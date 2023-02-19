@@ -1,9 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 
+
+
+
 .CameraDiv {
     background-color: #B7D3E9;
     height: 100vh;
     min-height: 100vh;
+}
+
+.prevCameraImgCaption {
+    font-family: "Noto Sans KR";
+    user-select: none;
+    -webkit-user-drag: none; 
+
+    color: white;
+
+    font-size: 1.5em;
+    font-weight: bolder;
+
+
+    position: absolute;
+    text-align: center;
+
+
+    z-index: 2;
+
+    top: 30%;
+    left: 9%;
+}
+
+.prevCameraImg {
+    position: absolute;
+    text-align: center;
+
+
+    z-index: 2;
+
+    top: 35%;
+    left: 5%;
+}
+
+.prevCameraImgSC {
+    display: block;
+
+    width: 90%;
 }
 
 .Webcam {

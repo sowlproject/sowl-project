@@ -4,6 +4,7 @@ import "./Camera.scss";
 import { Link } from "react-router-dom";
 import imageSet from "./App";
 import shutterImg from "./img/shutter.png";
+import NextButton from './nextButton.js';
 
 const videoConstraints = {
     width: 405,
@@ -16,7 +17,7 @@ const Camera = () => {
     const webcamRef = useRef(null);
     const [url, setUrl] = React.useState(null);
     const capturePhoto_1 = React.useCallback(async () => {
-        if (num === 7) {alert("8장 모두 촬영되었습니다. go to select 버튼을 눌러주세요!");return;} num++;
+        if (num === 7) {alert("8장 모두 촬영되었습니다. 다음 버튼을 눌러주세요!");return;} num++;
         const imageTmp = webcamRef.current.getScreenshot({ width: 405, height: 268 });
         imageSet[num] = imageTmp;
         setUrl(imageSet[num]);
@@ -47,65 +48,10 @@ const Camera = () => {
             <button className="shutter" onClick={capturePhoto_1}></button>
             {/* <button onClick={() => setUrl(null)}>Refresh</button> */}
             {url && (
-                // <div id="photoboard" alt="Screenshot">
-                //     <div>
-                //         <img src={capture[0]} alt="Screenshot" width="192px" height="108px" />
-                //     </div>
-                //     <div>
-                //         <img src={capture[1]}alt="Screenshot" width="240px" height="135px" />
-                //     </div>
-                //     <div>
-                //         <img src={capture[2]}alt="Screenshot" width="240px" height="135px"/>
-                //     </div>
-                //     <div>
-                //         <img src={capture[3]} alt="Screenshot" width="240px" height="135px"/>
-                //     </div>
-                //     <div>
-                //         <img src={capture[4]} alt="Screenshot" width="240px" height="135px"/>
-                //     </div>
-                //     <div>
-                //         <img src={capture[5]}alt="Screenshot" width="240px" height="135px"/>
-                //     </div>
-                //     <div>
-                //         <img src={capture[6]}alt="Screenshot" width="240px" height="135px"/>
-                //     </div>
-                //     <div>
-                //         <img src={capture[7]} alt="Screenshot" width="240px" height="135px"/>
-                //     </div>
-                // </div>
                 <div id="check_photosel">
-                    <Link to="/Select">go to Select</Link>
-                    <div className="check_sel" id="check_sel1">
-                        <p className="check_num" id="check_num1">
-                            <img src={imageSet[0]} className="check_cnv" id="check_cnv1" width="240px" height="135px" alt="Screenshot" /></p>
-                    </div>
-                    <div className="check_sel" id="check_sel2">
-                        <p className="check_num" id="check_num2">
-                            <img src={imageSet[1]} className="check_cnv" id="check_cnv2" width="240px" height="135px" alt="Screenshot" /></p>
-                    </div>
-                    <div className="check_sel" id="check_sel3">
-                        <p className="check_num" id="check_num3">
-                            <img src={imageSet[2]} className="check_cnv" id="check_cnv3" width="240px" height="135px" alt="Screenshot" /></p>
-                    </div>
-                    <div className="check_sel" id="check_sel4">
-                        <p className="check_num" id="check_num4">
-                            <img src={imageSet[3]} className="check_cnv" id="check_cnv4" width="240px" height="135px" alt="Screenshot" /></p>
-                    </div>
-                    <div className="check_sel" id="check_sel5">
-                        <p className="check_num" id="check_num5">
-                            <img src={imageSet[4]} className="check_cnv" id="check_cnv5" width="240px" height="135px" alt="Screenshot" /></p>
-                    </div>
-                    <div className="check_sel" id="check_sel6">
-                        <p className="check_num" id="check_num6">
-                            <img src={imageSet[5]} className="check_cnv" id="check_cnv6" width="240px" height="135px" alt="Screenshot" /></p>
-                    </div>
-                    <div className="check_sel" id="check_sel7">
-                        <p className="check_num" id="check_num7">
-                            <img src={imageSet[6]} className="check_cnv" id="check_cnv7" width="240px" height="135px" alt="Screenshot" /></p>
-                    </div>
-                    <div className="check_sel" id="check_sel8">
-                        <p className="check_num" id="check_num8">
-                            <img src={imageSet[7]} className="check_cnv" id="check_cnv8" width="240px" height="135px" alt="Screenshot" /></p>
+                    <div className="prevCameraImgCaption">이전에 찍은 사진이에요</div>
+                    <div className="prevCameraImg">
+                        <img src={imageSet[num]} className="prevCameraImgSC" alt="Screenshot" />
                     </div>
                 </div>
             )}
@@ -115,6 +61,7 @@ const Camera = () => {
             <div className='cameraBgFrame2'>
                 <BgFrame></BgFrame>
             </div>
+            <Link to="/Select"><NextButton></NextButton></Link>
         </div>
     );
 };

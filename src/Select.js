@@ -142,7 +142,7 @@ function ImgTable() {
         </tr>
       </tbody>
       <div>
-        <button onClick={handleSaveClick}>저장</button>
+        {/* <button onClick={handleSaveClick}>저장</button> */}
       </div>
     </table>
     </div>
