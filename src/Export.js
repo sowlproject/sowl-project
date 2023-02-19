@@ -120,6 +120,7 @@ function Export() {
           <div className='ExportBgFrame2'>
               <BgFrame></BgFrame>
           </div>
+          <div onClick={}><ExportButton></ExportButton></div>
         </div>
     );
 }
