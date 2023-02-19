@@ -42,7 +42,7 @@ async function mergeImages(imageDataArray) {
 }
 
  let options = {
-     apiKey: "46cc197df26dbf3d3caf8c1a71605bd4",
+     apiKey: "6b72f478726b2ed224c0222a359e2915",
      expiration: 15552000,
      base64string: "",
 };
