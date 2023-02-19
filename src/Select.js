@@ -12,7 +12,6 @@ import Frame2 from "./img/Frame_skhu_480.png";
 import Frame3 from "./img/Frame_yellowgreen_480.png";
 import AppContext from './AppContext';
 
-
 function frameNum(selectedFrame) {
   if (selectedFrame === 0) {
     return Frame0;
