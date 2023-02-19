@@ -42,10 +42,11 @@ async function mergeImages(imageDataArray) {
   return mergedImage;
 }
 
- let options = {
-     apiKey: "6b72f478726b2ed224c0222a359e2915",
-     expiration: 15552000,
-     base64string: "",
+let options = {
+      apiKey: "7514ac23daba5620cd83413e8253c7bb",
+     // ba1dced7f7a5a06a7ae41877e8b24d50 여분의 api key
+      expiration: 15552000,
+      base64string: "",
 };
 
 
@@ -84,7 +85,8 @@ function Export() {
       console.log("완료.");
       let form = new FormData();
       form.append("image", url.substring(22));
-      fetch('https://api.imgbb.com/1/upload?key=6b72f478726b2ed224c0222a359e2915', {
+      fetch('https://api.imgbb.com/1/upload?key=7514ac23daba5620cd83413e8253c7bb', {
+        // ba1dced7f7a5a06a7ae41877e8b24d50 여분의 api key
         method: 'post',
         body: form})
       .then(res => res.json())
