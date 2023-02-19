@@ -6,6 +6,7 @@ import Home from './Home.js';
 import Frame from './Frame.js';
 import Camera from './Camera.js';
 import Select from './Select.js';
+import Export from './Export.js';
 import ReactAudioPlayer from "react-audio-player";
 import bgmusic from "./bgm/여름밤의꿈1.mp3";
 import Frame0 from "./img/Frame_black_480.png";
@@ -41,6 +42,7 @@ export function App() {
               <Route path="/frame" element={<Frame value={FV} />} />
               <Route path="/camera" element={<Camera imageSrc={imageSet} selected={imageSelected4} />} />
               <Route path='/Select' element={<Select imageSrc={imageSet} />} />
+              <Route path='/Export' element={<Export imageSrc={imageSet} />} />
             </Routes>
           </BrowserRouter>
         </FullScreen>

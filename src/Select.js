@@ -1,11 +1,13 @@
-import {React, useCallback, useContext, useState} from 'react';
-import ReactDOM from 'react-dom/client';
+import {React, useCallback, useContext, useState } from 'react';
+import { Link } from "react-router-dom";
 import "./Select.scss";
 import "./Frame.scss";
 import "./bgFrame.scss";
 import imageSet from "./App";
 import imageSelected4 from "./App";
 import selectedFrame from "./App"; // 고친부분("./App" --> "./Frame")
+import NextButton from './nextButton.js';
+import Export from './Export.js';
 import Frame0 from "./img/Frame_black_480.png";
 import Frame1 from "./img/Frame_navy_480.png";
 import Frame2 from "./img/Frame_skhu_480.png";
@@ -163,6 +165,7 @@ function Select() {
       <div className="centerContainer">
         <ImgTable></ImgTable>
       </div>
+      <Link to="/Export"><NextButton></NextButton></Link>
     </div>
   )
 }
