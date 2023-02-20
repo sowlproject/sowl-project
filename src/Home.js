@@ -6,6 +6,8 @@ import Home_frame40 from "./img/Home-frame40.png";
 import Home_frame60 from "./img/Home-frame60.png";
 import "./bgFrame.scss";
 
+handle.enter();
+
 export default function Home() {
     return (
             <div className="HomeDiv">
