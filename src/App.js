@@ -26,6 +26,7 @@ export function App() {
     setFrame,
     tFValue
   };
+
   return (
     <>
       <AppContext.Provider value={FV}>

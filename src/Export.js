@@ -48,8 +48,6 @@ let options = {
 };
 
 
-let justOne = 0;
-
 let isTrue = false;
 let tmp ;
 function Export() {
@@ -99,7 +97,6 @@ function Export() {
 
   if (isTrue == 0 ) {
     test2(myContext.imageSelected4);
-    justOne++;    
   }
 
   function done() {
