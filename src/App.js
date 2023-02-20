@@ -20,7 +20,7 @@ let imageSet = [];
 export function App() {
   const handle = useFullScreenHandle();
   const [FValue, setFrame] = useState(0);
-  const [imageSelected4, setim4] = useState([]);
+  const [imageSelected4] = useState([]);
   const tFValue = (e) => {
     FValue = e;
   };

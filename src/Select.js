@@ -81,7 +81,7 @@ function ImgTable() {
 
       myContext.imageSelected4[0] = (myContext.FValue < 2 ? (myContext.FValue == 0 ? config.black : config.navy) : (myContext.FValue == 2 ? config.skhu : config.yellowgreen));
       let i = 1;
-      for (var key in selectedImageIndex) {
+      for (var key of selectedImageIndex) {
         myContext.imageSelected4[i++] = imageSet[key];
       }
     }
@@ -114,7 +114,7 @@ function ImgTable() {
       <tbody>
         <tr>
           <td style={{ position: 'relative' }}>
-            <img src={imageSet[0]} onClick={handleImageClick(0)} value className="captureImg" />
+            <img src={imageSet[0]} onClick={handleImageClick(0)} className="captureImg" />
             {renderNumber(0)}
           </td>
           <td style={{ position: 'relative' }}>
