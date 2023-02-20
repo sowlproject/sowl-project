@@ -44,7 +44,6 @@ export function App() {
           </BrowserRouter>
         </FullScreen>
       </AppContext.Provider>
-      <button class="fullscbutton" onClick={handle.enter}>전체화면</button>
     </>
   )
 }
