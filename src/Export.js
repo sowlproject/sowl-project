@@ -42,6 +42,7 @@ async function mergeImages(imageDataArray) {
 let options = {
       apiKey: "7514ac23daba5620cd83413e8253c7bb",
      // ba1dced7f7a5a06a7ae41877e8b24d50 여분의 api key
+     // 6b72f478726b2ed224c0222a359e2915 황재현 학우의 api key
       expiration: 15552000, // 만료기한 변경x.
       base64string: "",
 };
@@ -83,6 +84,7 @@ function Export() {
       form.append("image", url.substring(22));
       fetch('https://api.imgbb.com/1/upload?key=7514ac23daba5620cd83413e8253c7bb', {
         // ba1dced7f7a5a06a7ae41877e8b24d50 여분의 api key
+        // 6b72f478726b2ed224c0222a359e2915 황재현 학우의 api key
         method: 'post',
         body: form})
       .then(res => res.json())
