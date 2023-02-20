@@ -1,13 +1,10 @@
 import {React, useCallback, useContext, useState } from 'react';
-import { Link } from "react-router-dom";
 //import imgbbUploader from "imgbb-uploader";
 import QRCode from "react-qr-code";
-import imageSelected4 from "./App";
 import './Export.scss';
 import ExportButton from './ExportButton.js';
 import { createCanvas, loadImage } from 'canvas';
 import AppContext from './AppContext';
-
 
 let url = "";
 
@@ -45,7 +42,7 @@ async function mergeImages(imageDataArray) {
 let options = {
       apiKey: "7514ac23daba5620cd83413e8253c7bb",
      // ba1dced7f7a5a06a7ae41877e8b24d50 여분의 api key
-      expiration: 15552000,
+      expiration: 15552000, // 만료기한 변경x.
       base64string: "",
 };
 
@@ -60,7 +57,6 @@ function Export() {
   function Qrtest(url) {
     return (
         <div className='qrcodeDiv'>
-            <br></br><br></br><br></br><br></br>
         <QRCode 
         size={256}
         style={{ height: "auto", maxWidth: "10%", width: "100%" }}

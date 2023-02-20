@@ -5,7 +5,6 @@ import "./Frame.scss";
 import "./bgFrame.scss";
 import imageSet from "./App";
 //import imageSelected4 from "./App";
-import selectedFrame from "./App"; // 고친부분("./App" --> "./Frame")
 import NextButton from './nextButton.js';
 import Frame0 from "./img/Frame_black_480.png";
 import Frame1 from "./img/Frame_navy_480.png";
@@ -77,9 +76,9 @@ function ImgTable() {
 
   const handleSaveClick = () => {
     
-    if (selectedImageIndex.length == 4) {
+    if (selectedImageIndex.length === 4) {
 
-      myContext.imageSelected4[0] = (myContext.FValue < 2 ? (myContext.FValue == 0 ? config.black : config.navy) : (myContext.FValue == 2 ? config.skhu : config.yellowgreen));
+      myContext.imageSelected4[0] = (myContext.FValue < 2 ? (myContext.FValue === 0 ? config.black : config.navy) : (myContext.FValue === 2 ? config.skhu : config.yellowgreen));
       let i = 1;
       for (var key of selectedImageIndex) {
         myContext.imageSelected4[i++] = imageSet[key];

@@ -1,4 +1,4 @@
-import { React, useState, createContext, useContext } from 'react';
+import { React, useState } from 'react';
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
@@ -9,10 +9,6 @@ import Select from './Select.js';
 import Export from './Export.js';
 import ReactAudioPlayer from "react-audio-player";
 import bgmusic from "./bgm/여름밤의꿈1.mp3";
-// import Frame0 from "./img/Frame_black_480.png";
-// import Frame1 from "./img/Frame_navy_480.png";
-// import Frame2 from "./img/Frame_skhu_480.png";
-// import Frame3 from "./img/Frame_yellowgreen_480.png";
 import AppContext from './AppContext';
 
 let imageSet = [];
@@ -34,7 +30,7 @@ export function App() {
     <>
       <AppContext.Provider value={FV}>
         <FullScreen className="full-screen" handle={handle}>
-          <button class="fullscbutton" onClick={handle.enter}>전체화면</button>
+          <button className="fullscbutton" onClick={handle.enter}>전체화면</button>
           <ReactAudioPlayer src={bgmusic} autoPlay loop />
           <BrowserRouter>
             <Routes>

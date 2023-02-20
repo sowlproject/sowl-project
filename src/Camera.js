@@ -3,7 +3,6 @@ import Webcam from "react-webcam";
 import "./Camera.scss";
 import { Link } from "react-router-dom";
 import imageSet from "./App";
-import shutterImg from "./img/shutter.png";
 import NextButton from './nextButton.js';
 import ShutterSoundMP3 from './audio/shutterSound.mp3';
 
