@@ -46,7 +46,7 @@ const Camera = () => {
     }
 
     const keyDown = e => {
-        if(e.key === "ArrowDown"){
+        if(e.key === "PageDown"){
             capturePhoto_1(); 
             play();
         }
